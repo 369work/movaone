@@ -4,12 +4,12 @@
 * Author: 369work
 * Author URI: https://profiles.wordpress.org/369work/
 * Description: Movaone Theme is a Clean and Elegant Blogger Template specially made for creative bloggers. It provides clean and gorgeous minimalistic layouts that make your content look great on any kind of device.
-* Requires at least: 6.6
+* Requires at least: 6.7
 * Tested up to: 6.4
 * Requires PHP: 8.1
-* Stable tag: 1.0.0
-* License: GNU General Public License v2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Stable tag: 1.0.6
+* License: GNU General Public License v3 or later
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
 * Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background
 
@@ -25,11 +25,10 @@ Movaone WordPress Theme is derived from Underscores WordPress Theme, Copyright 2
 Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 
 
-/*========= Font and other Credits Bundle =========*/
-All the theme files, scripts and images are licensed under GPLv2 license
+/*========= Font and other Bundle =========*/
+All the theme files, scripts and images are licensed under GPLv3 license
 Movaone theme uses:
-* Header image and demo image and logo credit: Copyright 2024 369work.
-* Movaone use font : google font licensed under the SIL Open Font License (OFL) version 1.1.
+* Header image and demo image and menu icon snd screenshot : Copyright 369work. licensed under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 

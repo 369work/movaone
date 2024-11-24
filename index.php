@@ -6,7 +6,8 @@
 
  */
 get_header(); ?>
-<main>
+
+<main id="main">
     <div class="main__wrap">
         <div class="container the-container">
             <section>

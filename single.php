@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
 
-<main>
+<main id="main">
     <div class="main__wrap">
         <div class="container">
             <div class="inner-wrap">
@@ -78,7 +78,7 @@
                                 if (comments_open() || '0' != get_comments_number()) :
                                     comments_template();
                                 endif;
-                        ?>
+                                ?>
                     </div>
 
                 </article>

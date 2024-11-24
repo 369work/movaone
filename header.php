@@ -14,10 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <!--- Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
     <?php wp_head(); ?>
 </head>
@@ -28,6 +24,7 @@
         <header>
             <div class="container">
                 <div class="header__wrap">
+                    <a class="skip-link" href="#main"><?php _e('Skip to content', 'movaone'); ?></a>
                     <div class="header__logo">
                         <a class="header__logo__link" href="<?php echo esc_url(home_url('/')); ?>">
                             <?php movaone_logo(); ?>
@@ -36,28 +33,22 @@
                     </div>
                     <div class="header__nav">
                         <div class="header__link">
-                            <a href="#download" class="header__link__button">CTA BUTTON</a>
+                            <a href="<?php echo movaone_cta_link(); ?>"
+                                class="header__link__button"><?php echo esc_html(get_theme_mod('cta_button_text', 'CTA BUTTON')); ?></a>
                         </div>
-                        <button data-collapse-toggle="menu-1" type="button" class="header__menu__button"
-                            aria-controls="menu-1" aria-expanded="false">
+                        <button data-collapse-toggle="header-menu-dialog" type="button" class="header__menu__button"
+                            aria-controls="header-menu-dialog" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
-                            <svg class="open" fill="currentColor" width="50" height="50" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <svg class="hidden close" fill="currentColor" width="50" height="50" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                            <img class="open" src="<?php echo esc_url(THEME_IMAGES . 'bar.webp') ?>" alt="menu-open">
+                            <img class="close hidden" src="<?php echo esc_url(THEME_IMAGES . 'times.webp') ?>"
+                                alt="menu-close">
                         </button>
                     </div>
                 </div>
-                <div id="menu-1" class="header__menu hidden">
-                    <?php wp_nav_menu(array(
+                <dialog id="header-menu-dialog" class="header__menu" role="dialog" aria-modal="true"
+                    aria-label="header-menu">
+                    <?php
+                    wp_nav_menu(array(
                         'menu'                 => 'header-menu',
                         'container'            => 'ul',
                         'container_class'      => '',
@@ -76,14 +67,16 @@
                         'depth'                => 0,
                         'walker'               => '',
                         'theme_location' => 'primary',
-                    )); ?>
-                </div>
+                    ));
+
+                    ?>
+                </dialog>
             </div>
         </header>
 
         <div class="content__wrap">
             <aside>
-                <div class="container">
+                <div class="aside__wrap">
                     <div class="aside__title">
                         <?php
                         $page_id = get_page_by_path('aside');

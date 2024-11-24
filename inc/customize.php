@@ -3,6 +3,12 @@
 function movaone_customizer($wp_customize)
 {
 
+	$wp_customize->add_section('movaone_toggle_features', array(
+		'title' 	=> __('Movaone Features', 'movaone'),
+		'priority' 	=> 30,
+	));
+
+
 	//general link color
 	$general_link = '#f8fafc';
 	$wp_customize->add_setting('general_link', array(
@@ -39,7 +45,7 @@ function movaone_customizer($wp_customize)
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_bgcolor_1', array(
-		'label' 	=> __('Header Background color', 'movaone'),
+		'label' 	=> __('Header Background color(gradation 2color select)', 'movaone'),
 		'section' 	=> 'movaone_toggle_features',
 		'settings' 	=> 'header_bgcolor_1',
 	)));
@@ -56,6 +62,33 @@ function movaone_customizer($wp_customize)
 		'section' 	=> 'movaone_toggle_features',
 		'settings' 	=> 'header_bgcolor_2',
 	)));
+
+	//add CTA Button link and text
+	$wp_customize->add_setting('cta_button_text', array(
+		'default' 	=> 'CTA BUTTON',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control('cta_button_text', array(
+		'label' 	=> __('CTA Button Text', 'movaone'),
+		'section' 	=> 'movaone_toggle_features',
+		'settings' 	=> 'cta_button_text',
+	));
+
+	$wp_customize->add_setting('cta_button_link', array(
+		'default' 	=> '#main',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+
+	$wp_customize->add_control('cta_button_link', array(
+		'label' 	=> __('CTA Button Link', 'movaone'),
+		'section' 	=> 'movaone_toggle_features',
+		'settings' 	=> 'cta_button_link',
+	));
+
+
 }
 
 add_action('customize_register', 'movaone_customizer');

@@ -3,12 +3,12 @@
 * Author: 369work
 * Author URI: https://profiles.wordpress.org/369work/
 * Description: Movaone is a WordPress theme whose design is optimized to prioritize display on mobile devices such as smartphones.
-* Version: 1.0.0
+* Version: 1.0.6
 * Requires at least: 6.4
-* Tested up to: 6.6
+* Tested up to: 6.7
 * Requires PHP: 8.1
-* License: GNU General Public License v2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* License: GNU General Public License v3 or later
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
 * Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background
 
@@ -1377,3 +1377,11 @@ ul.wp-block-page-list {
 }
 
 @media (max-width:480px) {}
+
+.comment-form input[type="text"], .comment-form input[type="email"], .comment-form input[type="url"], .comment-form textarea {
+  width: 90%;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e5e5;
+
+}

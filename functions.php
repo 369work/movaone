@@ -1,13 +1,24 @@
 <?php
-if (! defined('THEME_VERSION')) {
-	// Replace the version number of the theme on each release.
-	define('THEME_VERSION', '1.0.0');
-}
+/**
+ * Movaone functions and definitions
+ * @package Movaone
+*/
 
+defined('ABSPATH') || exit;
+
+//define the Image path
 if (! defined('THEME_IMAGES')) {
 	// imagePath
 	define('THEME_IMAGES', get_template_directory_uri() . '/assets/images/');
 }
+
+//define Movaone version
+if (! defined('THEME_VERSION')) {
+	// Replace the version number of the theme on each release.
+	$version = wp_get_theme()->get('Version');
+	define('THEME_VERSION', $version);
+}
+
 
 //add css and js
 function movaone_add_script()
@@ -58,10 +69,21 @@ function movaone_general_register()
 	// Add Feature image support & automatic feed
 	add_theme_support('post-thumbnails');
 
-	add_theme_support('automatic-feed-links');
-
 	//add support for title tag
 	add_theme_support('title-tag');
+
+	// Add support for full and wide align images.
+	add_theme_support('align-wide');
+	add_theme_support('appearance-tools');
+
+
+	add_theme_support('automatic-feed-links');
+
+	// Add support for responsive embeds.
+	add_theme_support('responsive-embeds');
+
+	// add support for block styles
+	add_theme_support('wp-block-styles');
 
 	//custom logo
 	add_theme_support('custom-logo', array(
@@ -95,25 +117,47 @@ function movaone_general_register()
 
 
 	//the post formats
-	add_theme_support('post-formats', array('aside', 'status', 'quote'));
+	add_theme_support('post-formats', array('aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'));
 
 	// The content width
 	if (! isset($content_width))
 		$GLOBALS['content_width'] = 1400;
+
 	//html5 and gallery
-
-
 	add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
+
+	// Add support for admin styles
+	add_theme_support('editor-styles');
+	add_editor_style(get_parent_theme_file_uri('assets/css/editor-style.css'));
+
 }
 add_action('after_setup_theme', 'movaone_general_register');
 
-
+// custom logo display
 function movaone_logo() {
 	if (has_custom_logo()) {
 		the_custom_logo();
-	} else {
-		echo '<img src="' . esc_url(THEME_IMAGES . 'movaone-logo.webp') . '">';
 	}
+}
+
+
+// title tag separator
+function movaone_document_title_separator($separator)
+{
+	$separator = '|';
+	return $separator;
+}
+add_filter('document_title_separator', 'movaone_document_title_separator');
+
+// CTA button link
+function movaone_cta_link() {
+	$cta_link = get_theme_mod('cta_button_link', '#main');
+	if (!strstr($cta_link, 'http') || !strstr($cta_link, 'https')) {
+		$cta_link = home_url($cta_link);
+	} else {
+		$cta_link = esc_url($cta_link);
+	}
+	return $cta_link;
 }
 
 // custom excerpt length
@@ -142,7 +186,7 @@ function movaone_create_aside_page() {
 	$page_content =
 		<<<HTML
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group"><!-- wp:heading -->
+<div class="wp-block-group"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Smart WEB Design</h1>
 <!-- /wp:heading -->
 
@@ -162,9 +206,9 @@ function movaone_create_aside_page() {
 <p>The left content of the PC page is this page. Please rewrite it freely. The heading can be beautifully decorated by starting with H1.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:spacer {"height":"0px","style":{"layout":{"selfStretch":"fixed","flexSize":"20px"}}} -->
-<div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
+<!-- wp:paragraph -->
+<p>On PC, this area will always be displayed on the left.</p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 HTML;
 

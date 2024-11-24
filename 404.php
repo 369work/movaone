@@ -8,7 +8,7 @@
 ?>
 <?php get_header(); ?>
 
-<main>
+<main id="main">
     <div class="main__wrap">
         <div class="container">
             <div class="inner-wrap">

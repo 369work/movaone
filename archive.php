@@ -1,16 +1,17 @@
 <?php
+
 /**
  * The template for displaying archive pages
  */
 
 get_header(); ?>
 
-<main>
+<main id="main">
     <div class="main__wrap">
         <div class="container the-container">
             <div class="inner-wrap">
                 <?php
-				if (have_posts()) : ?>
+                if (have_posts()) : ?>
                 <div class="relative">
                     <div class="contents">
                         <div class="entry-header">
@@ -18,14 +19,14 @@ get_header(); ?>
                         </div><!-- .page-header -->
 
                         <?php
-							if (have_posts()) :
-								while (have_posts()) : the_post();
-									get_template_part('parts/content', get_post_format());
-								endwhile;
-							else:
-								esc_html_e('Sorry, nothing found!', 'movaone');
-							endif;
-							?>
+                            if (have_posts()) :
+                                while (have_posts()) : the_post();
+                                    get_template_part('parts/content', get_post_format());
+                                endwhile;
+                            else:
+                                esc_html_e('Sorry, nothing found!', 'movaone');
+                            endif;
+                            ?>
                         <div class="navigation">
                             <div class="previous">
                                 <?php esc_html(previous_posts_link(__('&laquo; Previous Page', 'movaone'))); ?></div>
@@ -35,10 +36,10 @@ get_header(); ?>
                     </div>
                 </div>
                 <?php
-				else :
-					esc_html_e('Sorry, nothing to show here, Please check back later', 'movaone');
-				endif;
-				?>
+                else :
+                    esc_html_e('Sorry, nothing to show here, Please check back later', 'movaone');
+                endif;
+                ?>
                 <?php get_sidebar(); ?>
             </div>
         </div>
