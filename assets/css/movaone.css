@@ -10,33 +10,12 @@
 
 /* Prevent font size inflation */
 html {
-    -webkit-text-size-adjust: none;
-    /* Safari */
-    -moz-text-size-adjust: none;
-    /* Firefox */
-    text-size-adjust: none;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-font-smoothing: antialiased;
-    -webkit-font-feature-settings: 'palt';
-    font-feature-settings: 'palt';
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     font-size: 100%;
 }
 
-/* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd, ul {
-    margin-block-end: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
-}
-
-/* Set core body defaults */
 body {
     font-family: "Helvetica Neue",
         Arial,
@@ -45,75 +24,19 @@ body {
         Meiryo,
         sans-serif;
     font-weight: 400;
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
+    font-size: clamp(1rem, calc(0.75rem + 1vw), 1.25rem);
     line-height: 1.5;
-    scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
-    word-break: break-word;
     color: #f8fafc;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
-    line-height: 1.1;
-}
 
-/* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
-    text-wrap: balance;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
+a {
     text-decoration-skip-ink: auto;
-    color: currentColor;
     transition: all 0.7s;
 }
 
 a:hover {
     transform: scale(1.02);
-}
-
-/* Make images easier to work with */
-img,
-picture {
-    max-width: 100%;
-    vertical-align: bottom;
-    height: auto;
-}
-
-/* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-/* Make sure textarea without a rows attribute are not tiny */
-textarea:not([rows]) {
-    min-height: 10em;
-}
-
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-    scroll-margin-block: 5ex;
-}
-
-/* Any Button */
-[type=button], [type=reset], [type=submit], button {
-    -webkit-appearance: button;
-    appearance: button;
-    background-color: transparent;
-    background-image: none;
-    cursor: pointer;
-    text-transform: none;
 }
 
 /*************Effect******************/
@@ -189,6 +112,15 @@ textarea:not([rows]) {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+.mouse-focus {
+    outline: 2px solid blue;
+}
+
+.keyboard-focus {
+    outline: 2px solid orange;
+    outline-offset: 2px;
 }
 
 .skip-link {
@@ -277,7 +209,7 @@ main {
     position: relative;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .content__wrap {
         flex: 1;
         width: 100%;
@@ -316,7 +248,7 @@ main {
         width: 100%;
         max-width: 600px;
         height: 100%;
-        padding-right: 2rem;
+        padding-right: 1rem;
         z-index: 10;
     }
 }
@@ -335,7 +267,7 @@ footer {
     padding: 0 .5rem;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .container {
         width: 100%;
         margin: 0 auto;
@@ -361,7 +293,22 @@ a.blue:link {
 
 .header__logo {
     display: flex;
+    align-items: center;
     width: 300px;
+}
+
+.custom-logo-link {
+    float: none;
+    display: flex;
+    align-items: center;
+    padding: 5px 0 0 0;
+    margin-right: .25rem;
+}
+
+.custom-logo-link img {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
 }
 
 .header__logo__link {
@@ -411,16 +358,22 @@ a.header__link__button:hover {
     transform: scale(1);
 }
 
+.header__menu__close {
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
 .header__menu__button {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 75px;
-    background-color: #313131;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 60px;
     border: none;
     color: #f8fafc;
     cursor: pointer;
     transition: all 0.3s;
+    z-index: 10;
 }
 
 .header__menu__button:hover {
@@ -428,14 +381,58 @@ a.header__link__button:hover {
     opacity: 0.8;
 }
 
-dialog.header__menu {
-    top: 77px;
-    width: auto;
-    height: 100vh;
-    background-color: rgba(81, 81, 81, 0.8);
-    padding: 2rem;
-    animation: slideIn 0.5s forwards;
+.header__menu__button .bar {
+    width: 60px;
+    height: 4px;
+    background-color: #f8fafc;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.header__menu__button.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.header__menu__button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.header__menu__button.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+#header-menu-modal {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 90%;
     overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    z-index: 90;
+    animation: slideIn 0.5s forwards;
+    padding: 2rem;
+}
+
+#header-menu-modal[aria-hidden="true"] {
+    display: none;
+}
+
+#header-menu-modal[aria-hidden="false"] {
+    display: block;
+}
+
+.modal-content {
+    padding: 1rem;
+    border: 2px solid #EDF1F7;
+    border-radius: .5rem;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ul.header__menu__list {
@@ -483,7 +480,7 @@ img.open, img.close {
     filter: invert(1);
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .header__link {
         display: flex;
         width: 240px;
@@ -508,7 +505,7 @@ img.open, img.close {
     padding: 0 .5rem;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     .aside__wrap {
         position: fixed;
         top: 76px;
@@ -595,7 +592,7 @@ main h2 {
     text-align: center;
     margin: 2rem 0;
     position: relative;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     padding: 1rem 0;
     display: flex;
     justify-content: center;
@@ -607,7 +604,7 @@ main h2 a {
     color: #ace0ff;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.275rem;
+    font-size: 1.725rem;
 }
 
 main h2::before {
@@ -676,11 +673,20 @@ main h2::after {
 /************** FOOTER ***************/
 .footer__wrap {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+    .footer__wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 ul.footer__link {
     display: flex;
+    padding-top: .5rem;
 }
 
 ul.footer__link li {
@@ -692,7 +698,21 @@ ul.footer__link li a {
     display: flex;
     color: #94a3b8;
     text-decoration: none;
-    padding: .5rem 1rem;
+    padding: .5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    ul.footer__link {
+        padding-top: 0;
+    }
+
+    ul.footer__link li a {
+        display: flex;
+        color: #94a3b8;
+        text-decoration: none;
+        padding: .5rem 1rem;
+    }
+    
 }
 
 ul.footer__link li a:hover {
@@ -703,9 +723,23 @@ ul.footer__link li a:hover {
 
 .footer__copyright {
     display: flex;
+    flex-direction: column;
     align-items: center;
     color: #94a3b8;
     text-decoration: none;
+    padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .footer__copyright {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #94a3b8;
+        text-decoration: none;
+        gap: 1rem;
+    }
+    
 }
 
 /************ COMPONENTS *************/
@@ -739,4 +773,12 @@ article>footer {
     font-size: 2rem;
     font-weight: 700;
     display: inline-block;
+}
+
+.sidebar-top {
+    border-bottom: 1px solid #D7D7D7;
+    padding: .5rem 0;
+    width: 100%;
+    height: .5rem;
+    margin-bottom: 1rem;
 }

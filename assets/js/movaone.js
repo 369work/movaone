@@ -1,51 +1,105 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // フォーカス検出のためのイベントリスナー設定
+    document.addEventListener("mousedown", () => {
+        window.mouseDown = true;
+    });
+
+    document.addEventListener("mouseup", () => {
+        window.mouseDown = false;
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Tab") {
+            window.keyboardFocus = true;
+            window.mouseDown = false;
+        }
+    });
+
+    // メニュー関連の要素を取得
     const menuButton = document.querySelector(".header__menu__button");
-    const menu = document.getElementById("header-menu-dialog");
-    const open = document.querySelector("img.open");
-    const close = document.querySelector("img.close");
+    const menu = document.getElementById("header-menu-modal");
+    const closeMenuButton = document.querySelector(".header__menu__close");
 
+    // メニューの状態を管理
+    let isMenuOpen = false;
 
-    if (menuButton && menu) {
-        menuButton.addEventListener("click", function () {
-            open.classList.toggle("hidden");
-            close.classList.toggle("hidden");
+    // メニューを開く関数
+    const openMenu = () => {
+        menu.setAttribute("aria-hidden", "false");
+        menuButton.classList.add("active");
+        menuButton.setAttribute("aria-expanded", "true");
+        isMenuOpen = true;
+    };
 
-            if (menu.hasAttribute("open")) {
-                menu.removeAttribute("open");
-            } else {
-                menu.setAttribute("open", true);
-                menu.showModal();
-            }
+    // メニューを閉じる関数
+    const closeMenu = () => {
+        menu.setAttribute("aria-hidden", "true");
+        menuButton.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+        isMenuOpen = false;
+    };
 
+    // メニューの開閉を切り替える関数
+    const toggleMenu = () => {
+        if (isMenuOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    };
+
+    // クリックイベントの設定
+    menuButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleMenu();
+
+        if (window.mouseDown) {
+            menuButton.classList.add("mouse-focus");
+            menuButton.classList.remove("keyboard-focus");
+        }
+    });
+
+    // フォーカスイベントの設定
+    menuButton.addEventListener("focus", (e) => {
+        if (window.mouseDown) {
+            // マウスクリックでのフォーカス
+            e.target.classList.add("mouse-focus");
+            e.target.classList.remove("keyboard-focus");
+        } else {
+            // キーボードでのフォーカス
+            e.target.classList.add("keyboard-focus");
+            e.target.classList.remove("mouse-focus");
+            openMenu();
+        }
+    });
+
+    // Escキーでメニューを閉じる
+    document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && isMenuOpen) {
+                menuButton.classList.remove("keyboard-focus");
+                closeMenu();
+        }
+    });
+
+    // メニュー内のリンクがクリックされた時にメニューを閉じる
+    const menuLinks = document.querySelectorAll("#header-menu-modal a");
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            closeMenu();
         });
+    });
 
-        const menuLinks = menu.querySelectorAll("a");
-        menuLinks.forEach((link) => {
-            link.addEventListener("click", function () {
-                menu.removeAttribute("open");
-                close.classList.add("hidden");
-                open.classList.remove("hidden");
-                menu.close();
-                menuButton.focus();
-            });
-        });
+    // メニューを閉じるボタンのクリックイベント
+    closeMenuButton.addEventListener("click", () => {
+        closeMenu();
+    });
 
-        document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape") {
-                    menu.classList.remove("open");
-                    close.classList.add("hidden");
-                    open.classList.remove("hidden");
-                    menu.close();
-                }
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    menuButton.click();
-            }
+    closeMenuButton.addEventListener("focus", (e) => {
+        menuButton.classList.remove("keyboard-focus");
+        closeMenu();
+    });
 
-        });
-
-    }
-
+    // ページ内リンクのスムーススクロール
     const pageLinks = document.querySelectorAll('a[href^="#"]');
 
     pageLinks.forEach((link) => {

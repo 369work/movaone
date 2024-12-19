@@ -19,6 +19,12 @@ if (! defined('THEME_VERSION')) {
 	define('THEME_VERSION', $version);
 }
 
+function movaone_language_setup()
+{
+	load_theme_textdomain('movaone', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'movaone_language_setup');
+
 
 //add css and js
 function movaone_add_script()

@@ -8,21 +8,6 @@ function movaone_customizer($wp_customize)
 		'priority' 	=> 30,
 	));
 
-
-	//general link color
-	$general_link = '#f8fafc';
-	$wp_customize->add_setting('general_link', array(
-		'default' 	=> $general_link,
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-	));
-
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'general_link', array(
-		'section' 	=> 'movaone_toggle_features',
-		'label' 	=> __('General Link Color', 'movaone'),
-		'settings' 	=> 'general_link',
-	)));
-
 	//header background color 1
 	$header_text_color = '#fefef1';
 	$wp_customize->add_setting('header_text_color', array(
@@ -105,20 +90,6 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-a:link,
-a:visited {
-    color: <?php echo esc_html(get_theme_mod('general_link', '#f8fafc'));
-    ?>
-}
-
-#submit,
-input[type="button"],
-input[type="submit"],
-button {
-    background-color: <?php echo esc_html(get_theme_mod('general_link', '#87cefa'));
-    ?>
 }
 
 .header__logo__title {

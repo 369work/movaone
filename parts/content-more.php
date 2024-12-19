@@ -22,7 +22,7 @@
     if (mb_strlen($except) > 48) {
         $except = mb_substr($except, 0, 48, 'utf-8') . '...';
 
-        $except .= '<p class="align-right">' . '<a href="' . get_the_permalink() . '" class="blue">' . esc_html__('read more', 'movaone') . '</a></p>';
+        $except .= '<p class="align-right">' . '<a class="readmore" href="' . get_the_permalink() . '">' . esc_html__('read more', 'movaone') . '</a></p>';
     }
 
     echo $except;

@@ -14,7 +14,7 @@ Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 * Requires at least: 6.7
 * Tested up to: 6.4
 * Requires PHP: 8.1
-* Stable tag: 1.0.6
+* Stable tag: 1.1.3
 * License: GNU General Public License v3 or later
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
@@ -24,7 +24,8 @@ Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 ## Font and other Bundle
 All the theme files, scripts and images are licensed under GPLv3 license.
 Movaone theme uses:
-* Header image and demo image and menu icon snd screenshot : Copyright 369work. licensed under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
+* Header image and demo image and menu icon and screenshot : Copyright 369work. licensed under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
+* Main Background image(SVG) by https://heropatterns.com/, licensed under CC0 4.0 (https://creativecommons.org/licenses/by/4.0/)
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 

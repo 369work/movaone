@@ -26,8 +26,8 @@
                 <div class="header__wrap">
                     <a class="skip-link" href="#main"><?php _e('Skip to content', 'movaone'); ?></a>
                     <div class="header__logo">
+                        <?php movaone_logo(); ?>
                         <a class="header__logo__link" href="<?php echo esc_url(home_url('/')); ?>">
-                            <?php movaone_logo(); ?>
                             <span class="header__logo__title"><?php bloginfo('name') ?></span>
                         </a>
                     </div>
@@ -36,41 +36,46 @@
                             <a href="<?php echo movaone_cta_link(); ?>"
                                 class="header__link__button"><?php echo esc_html(get_theme_mod('cta_button_text', 'CTA BUTTON')); ?></a>
                         </div>
-                        <button data-collapse-toggle="header-menu-dialog" type="button" class="header__menu__button"
-                            aria-controls="header-menu-dialog" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <img class="open" src="<?php echo esc_url(THEME_IMAGES . 'bar.webp') ?>" alt="menu-open">
-                            <img class="close hidden" src="<?php echo esc_url(THEME_IMAGES . 'times.webp') ?>"
-                                alt="menu-close">
+                        <button data-collapse-toggle="header-menu-modal" type="button" class="header__menu__button"
+                            aria-controls="header-menu-modal" aria-expanded="false">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <span class="sr-only"><?php esc_html_e('Open main menu', 'movaone'); ?></span>
                         </button>
                     </div>
                 </div>
-                <dialog id="header-menu-dialog" class="header__menu" role="dialog" aria-modal="true"
-                    aria-label="header-menu">
-                    <?php
-                    wp_nav_menu(array(
-                        'menu'                 => 'header-menu',
-                        'container'            => 'ul',
-                        'container_class'      => '',
-                        'container_id'         => '',
-                        'container_aria_label' => '',
-                        'menu_class'           => 'header__menu__list',
-                        'menu_id'              => 'header-menu',
-                        'echo'                 => true,
-                        'fallback_cb'          => 'wp_page_menu',
-                        'before'               => '',
-                        'after'                => '',
-                        'link_before'          => '',
-                        'link_after'           => '',
-                        'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'item_spacing'         => 'preserve',
-                        'depth'                => 0,
-                        'walker'               => '',
-                        'theme_location' => 'primary',
-                    ));
+                <div id="header-menu-modal" class="header__menu" aria-modal="true" aria-label="header-menu" aria-hidden="true">
+                    <div class="modal-content">
+                        <?php
+                        wp_nav_menu(array(
+                            'menu'                 => 'header-menu',
+                            'container'            => 'ul',
+                            'container_class'      => '',
+                            'container_id'         => '',
+                            'container_aria_label' => '',
+                            'menu_class'           => 'header__menu__list',
+                            'menu_id'              => 'header-menu',
+                            'echo'                 => true,
+                            'fallback_cb'          => 'wp_page_menu',
+                            'before'               => '',
+                            'after'                => '',
+                            'link_before'          => '',
+                            'link_after'           => '',
+                            'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            'item_spacing'         => 'preserve',
+                            'depth'                => 3,
+                            'walker'               => '',
+                            'theme_location' => 'primary',
+                        ));
 
-                    ?>
-                </dialog>
+                        ?>
+                    </div>
+                    <button data-collapse-toggle="header-menu-modal" type="button" class="header__menu__close"
+                        aria-controls="header-menu-modal" aria-expanded="false">
+                        <span><?php esc_html_e('Close main menu', 'movaone'); ?></span>
+                    </button>
+                </div>
             </div>
         </header>
 
