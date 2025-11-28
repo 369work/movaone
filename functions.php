@@ -6,6 +6,17 @@
 
 defined('ABSPATH') || exit;
 
+/**
+ * Proper ob_end_flush() for all levels
+ *
+ * This replaces the WordPress `wp_ob_end_flush_all()` function
+ * with a replacement that doesn't cause PHP notices.
+ */
+remove_action('shutdown', 'wp_ob_end_flush_all', 1);
+add_action('shutdown', function () {
+	while (@ob_end_flush());
+});
+
 //define the Image path
 if (! defined('THEME_IMAGES')) {
 	// imagePath
@@ -179,6 +190,7 @@ add_filter('excerpt_length', 'movaone_excerpt');
 ///include necessary files
 require get_template_directory() . '/inc/customize.php';
 require get_template_directory() . '/inc/widget/recent_posts.php';
+require get_template_directory() . '/inc/theme-options.php';
 
 // create a template
 function movaone_create_aside_page() {

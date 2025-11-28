@@ -8,13 +8,13 @@ Underscores WordPress Theme is distributed under the terms of the GNU GPL.
 * Licensed under GNU General Public License v3 or later. :se it to make something free design.
 * Theme Name: Movaone
 * Theme URI:
-* Author: 369work
+* Author: Miroku
 * Author URI: https://profiles.wordpress.org/369work/
 * Description: Movaone Theme is a Clean and Elegant Blogger Template specially made for creative bloggers. It provides clean and gorgeous minimalistic layouts that make your content look great on any kind of device.
-* Requires at least: 6.7
+* Requires at least: 6.9
 * Tested up to: 6.4
 * Requires PHP: 8.1
-* Stable tag: 1.1.3
+* Stable tag: 2.2
 * License: GNU General Public License v3 or later
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone

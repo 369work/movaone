@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: movaone_1.0\n"
-"POT-Creation-Date: 2024-12-09 19:05+0900\n"
-"PO-Revision-Date: 2024-12-09 19:11+0900\n"
+"POT-Creation-Date: 2025-04-01 12:46+0900\n"
+"PO-Revision-Date: 2025-04-01 12:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: 369work\n"
 "Language: ja\n"
@@ -14,7 +14,6 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html_e;_nx;__nx;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: assets\n"
-"X-Poedit-SearchPathExcluded-1: inc\n"
 
 #: 404.php:17
 msgid "Oops!That page can&rsquo;t be found."
@@ -70,11 +69,11 @@ msgstr "このトピックへのコメントは締め切られています."
 
 #: footer.php:38
 msgid "Powered by"
-msgstr ""
+msgstr "Powered by"
 
 #: footer.php:40
 msgid "Theme by "
-msgstr ""
+msgstr "Theme by "
 
 #: functions.php:51
 msgid "Sidebar"
@@ -86,11 +85,11 @@ msgstr "ウイジェットを追加"
 
 #: functions.php:70
 msgid "Primary Menu"
-msgstr ""
+msgstr "Primary Menu"
 
 #: functions.php:71
 msgid "Footer Menu"
-msgstr ""
+msgstr "Footer Menu"
 
 #: functions.php:120
 msgid "No image"
@@ -108,9 +107,163 @@ msgstr "メインメニューを開く"
 msgid "Close main menu"
 msgstr "メインメニューを閉じる"
 
+#: inc/customize.php:6
+msgid "Movaone Features"
+msgstr "Movaone 設定"
+
+#: inc/customize.php:18
+msgid "Header Text color"
+msgstr "ヘッダーの文字色"
+
+#: inc/customize.php:32
+msgid "Header Background color(gradation 2color select)"
+msgstr "ヘッダーの背景色（2色グラデーション）"
+
+#: inc/customize.php:58
+msgid "CTA Button Text"
+msgstr "CTAボタンのテキスト"
+
+#: inc/customize.php:70
+msgid "CTA Button Link"
+msgstr "CTAボタンのリンク先"
+
+#: inc/theme-options.php:17
+msgid "Movaone Theme Description"
+msgstr "Movaone Theme Description"
+
+#: inc/theme-options.php:18
+msgid "Movaone"
+msgstr "Movaone"
+
+#: inc/theme-options.php:86
+msgid "Movaone Theme Options"
+msgstr "Movaoneテーマオプション"
+
+#: inc/theme-options.php:88 inc/theme-options.php:138
+msgid "Thank you for using the Movaone theme!"
+msgstr "Movaoneテーマをご利用いただきありがとうございます！"
+
+#: inc/theme-options.php:89
+msgid "Here you can customize the Movaone theme."
+msgstr "Movaoneテーマをカスタマイズできます。"
+
+#: inc/theme-options.php:93
+msgid "Getting Started"
+msgstr "はじめましょう"
+
+#: inc/theme-options.php:94
+msgid ""
+"To get started with the Movaone theme, you can customize the theme using the "
+"Customizer."
+msgstr ""
+"Movaone テーマを使い始めるにあたって、カスタマイザーを使用してテーマをカスタ"
+"マイズできます。"
+
+#: inc/theme-options.php:95 inc/theme-options.php:125
+msgid "Customize"
+msgstr "カスタマイズ"
+
+#: inc/theme-options.php:100
+msgid "Basic usage of Movaone theme"
+msgstr "Movaoneテーマの基本的な使い方"
+
+#: inc/theme-options.php:101
+msgid ""
+"The Customizer allows you to easily customize the look of your site. You can "
+"customize the following elements:"
+msgstr ""
+"カスタマイザーを使用すると、サイトの外観を簡単にカスタマイズできます。次の要"
+"素をカスタマイズできます。"
+
+#: inc/theme-options.php:105
+msgid "Custom logo"
+msgstr "ロゴの設定"
+
+#: inc/theme-options.php:108
+msgid "Custom Header"
+msgstr "ヘッダーのデザイン変更"
+
+#: inc/theme-options.php:111
+msgid "Custom background Color"
+msgstr "背景色の変更"
+
+#: inc/theme-options.php:114
+msgid "Custom background"
+msgstr "背景の変更"
+
+#: inc/theme-options.php:117
+msgid "Menu placement"
+msgstr "メニューの設定"
+
+#: inc/theme-options.php:120
+#, fuzzy
+#| msgid "Sidebar"
+msgid "Sidebar Widget"
+msgstr "サイトバー"
+
+#: inc/theme-options.php:131
+msgid "Theme Support"
+msgstr "テーマサポート"
+
+#: inc/theme-options.php:132
+msgid ""
+"If you have any questions or need help with the movaone theme, please visit "
+"the support page."
+msgstr ""
+"Movaone テーマに関してご質問やサポートが必要な場合は、サポート ページをご覧く"
+"ださい。"
+
+#: inc/theme-options.php:133
+msgid "Go Details Page"
+msgstr "詳細ページへGO"
+
+#: inc/theme-options.php:137
+msgid "Review the Movaone Theme"
+msgstr "Movaoneテーマのレビュー"
+
+#: inc/theme-options.php:139
+msgid ""
+"We would love to hear your feedback on the Movaone theme. Please take a "
+"moment to leave a review."
+msgstr ""
+"Movaone テーマに関するご意見をお待ちしております。ぜひレビューをお寄せくださ"
+"い。"
+
+#: inc/theme-options.php:141
+msgid "Leave a Review"
+msgstr "レビューをする"
+
+#: inc/widget/recent_posts.php:9
+msgid ""
+"Display Recent Posts with this widget or you can also use movaone Posts "
+"widget for more filters."
+msgstr ""
+"このウィジェットを使用して最近の投稿を表示するか、または Movaone 投稿ウィ"
+"ジェットを使用することもできます。"
+
+#: inc/widget/recent_posts.php:10
+msgid "movaone Recent Posts Widget"
+msgstr "最近の投稿ウィジェット"
+
+#: inc/widget/recent_posts.php:88
+msgid "Recent Posts"
+msgstr "最近の投稿"
+
+#: inc/widget/recent_posts.php:93
+msgid "Title"
+msgstr "タイトル"
+
+#: inc/widget/recent_posts.php:100
+msgid "Limit Posts Number"
+msgstr "投稿数の制限"
+
+#: inc/widget/recent_posts.php:110
+msgid "Display post date?"
+msgstr "投稿日を表示しますか?"
+
 #: parts/author-infobox.php:3
 msgid "About "
-msgstr ""
+msgstr "About "
 
 #: parts/content-aside.php:24
 msgid "Continue reading..."
@@ -135,7 +288,7 @@ msgstr "%s 件の検索結果"
 
 #: single.php:35
 msgid "By"
-msgstr ""
+msgstr "By"
 
 #: single.php:41
 msgid " &#8212; Posted in"

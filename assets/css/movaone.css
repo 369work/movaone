@@ -294,7 +294,9 @@ a.blue:link {
 .header__logo {
     display: flex;
     align-items: center;
-    width: 300px;
+    min-width: 300px;
+    max-width: 100%;
+
 }
 
 .custom-logo-link {
@@ -327,9 +329,9 @@ a.blue:link {
 }
 
 .header__logo__title {
-    font-size: 2rem;
+    font-size: clamp(1.15rem, 0.95rem + 0.88vw, 2rem);
     font-weight: 700;
-    text-shadow: 2px 2px 0 rgba(88, 152, 255, 0.6);
+    text-shadow: 2px 2px 0 rgba(226, 226, 226, 0.663);
 }
 
 .header__nav {
@@ -531,7 +533,7 @@ aside h1 {
     color: #f8fafc;
     font-size: clamp(4rem, 3.6rem + 2vw, 6rem);
     text-align: left;
-    text-shadow: 4px 4px 0 rgba(189, 199, 215, 0.5);
+    text-shadow: 4px 4px 0 rgba(139, 184, 255, 0.5);
 }
 
 aside h1::after {
@@ -712,7 +714,7 @@ ul.footer__link li a {
         text-decoration: none;
         padding: .5rem 1rem;
     }
-    
+
 }
 
 ul.footer__link li a:hover {
@@ -739,7 +741,7 @@ ul.footer__link li a:hover {
         text-decoration: none;
         gap: 1rem;
     }
-    
+
 }
 
 /************ COMPONENTS *************/

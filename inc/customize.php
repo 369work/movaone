@@ -2,13 +2,12 @@
 
 function movaone_customizer($wp_customize)
 {
-
 	$wp_customize->add_section('movaone_toggle_features', array(
 		'title' 	=> __('Movaone Features', 'movaone'),
 		'priority' 	=> 30,
 	));
 
-	//header background color 1
+	//header text color 1
 	$header_text_color = '#fefef1';
 	$wp_customize->add_setting('header_text_color', array(
 		'default' 	=> $header_text_color,
@@ -115,3 +114,4 @@ function movaone_sanitize_all_checkbox($input)
 		return '';
 	}
 }
+
