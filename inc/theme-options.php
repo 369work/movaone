@@ -130,7 +130,7 @@ function movaone_theme_description_page()
         <div class="content">
             <h2 class="admin-sub-title"><?php esc_html_e('Theme Support', 'movaone'); ?></h2>
             <p><?php esc_html_e('If you have any questions or need help with the movaone theme, please visit the support page.', 'movaone'); ?></p>
-            <a href="https://369theme.com/theme/movaone" target="_blank" style="display: inline-block; margin: 1rem 0; padding: 10px 20px; background-color: #0073aa; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;"><?php esc_html_e('Go Details Page', 'movaone'); ?></a>
+            <a href="https://369theme.com/theme-movaone.html" target="_blank" style="display: inline-block; margin: 1rem 0; padding: 10px 20px; background-color: #0073aa; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;"><?php esc_html_e('Go Details Page', 'movaone'); ?></a>
         </div>
 
         <div class="content">

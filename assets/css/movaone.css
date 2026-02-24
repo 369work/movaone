@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-height: 60px; 
+}
+
 /* Prevent font size inflation */
 html {
     -webkit-text-size-adjust: 100%;
@@ -27,6 +31,7 @@ body {
     font-size: clamp(1rem, calc(0.75rem + 1vw), 1.25rem);
     line-height: 1.5;
     color: #f8fafc;
+    background-color: #1a1a1a;
 }
 
 
@@ -167,7 +172,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 76px;
+    padding-top: var(--header-height);
     overflow: auto;
     position: relative;
 }
@@ -177,17 +182,19 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: transparent;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     z-index: 100;
+    height: var(--header-height);
 }
 
 aside {
     width: 100%;
-    height: calc(100vh - 76px);
+    height: calc(100vh - var(--header-height));
     padding: 0;
     background-color: transparent;
 }
@@ -226,7 +233,7 @@ main {
     aside {
         flex: 1;
         width: 100%;
-        height: calc(100vh - 76px);
+        height: calc(100vh - var(--header-height));
         padding: 2rem;
         background-color: transparent;
         position: relative;
@@ -294,9 +301,10 @@ a.blue:link {
 .header__logo {
     display: flex;
     align-items: center;
-    min-width: 300px;
+    min-width: 0;
     max-width: 100%;
-
+    flex: 1;
+    overflow: hidden;
 }
 
 .custom-logo-link {
@@ -329,9 +337,12 @@ a.blue:link {
 }
 
 .header__logo__title {
-    font-size: clamp(1.15rem, 0.95rem + 0.88vw, 2rem);
+    font-size: clamp(1.75rem, 0.85rem + 0.88vw, 2.5rem);
     font-weight: 700;
     text-shadow: 2px 2px 0 rgba(226, 226, 226, 0.663);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header__nav {
@@ -369,8 +380,9 @@ a.header__link__button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1rem 0;
-    width: 60px;
+    padding: .75rem 0;
+    width: 44px;
+    flex-shrink: 0;
     border: none;
     color: #f8fafc;
     cursor: pointer;
@@ -384,9 +396,10 @@ a.header__link__button:hover {
 }
 
 .header__menu__button .bar {
-    width: 60px;
-    height: 4px;
+    width: 100%;
+    height: 3px;
     background-color: #f8fafc;
+    border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -503,8 +516,8 @@ img.open, img.close {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 0 .5rem;
+    justify-content: flex-start;
+    padding: 1.5rem .5rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -515,6 +528,7 @@ img.open, img.close {
         width: calc(100% - 600px);
         height: calc(100vh - 166px);
         padding: 0 1rem;
+        justify-content: center;
     }
 
 }
@@ -539,10 +553,15 @@ aside h1 {
 aside h1::after {
     content: "";
     display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #5898ff;
+    width: 60px;   /* 短く */
+    height: 3px;
+    background: linear-gradient(90deg, #5898ff, transparent);  /* グラデーション */
     margin-top: 8px;
+    border-radius: 2px;
+}
+
+.text-cyan {
+    color: #5898ff;
 }
 
 aside p {

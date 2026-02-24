@@ -111,8 +111,8 @@ function movaone_general_register()
 
 	//custom background
 	add_theme_support('custom-background', array(
-		'default-color'          => '#333',
-		'default-image'          =>  THEME_IMAGES .'back-default.webp',
+		'default-color'          => '#1a1a1a',
+		'default-image'          =>  THEME_IMAGES .'back-default.avif',
 		'default-repeat'         => 'none',
 		'default-position-x'     => 'center',
 		'default-attachment'     => 'fixed',
@@ -122,7 +122,7 @@ function movaone_general_register()
 	//custom header image
 	$args = array(
 		'default-image' =>  '',
-		'default-background-color' => '#333',
+		'default-background-color' => '#1e2a3a',
 		'default-text-color' => '#fefefe',
 		'width'         => '100%',
 		'height'        => 76,
@@ -205,12 +205,14 @@ function movaone_create_aside_page() {
 		<<<HTML
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Smart WEB Design</h1>
+<h1 class="wp-block-heading"><span>Smart</span><br><span class="text-cyan">WEB</span><br><span>Design</span></h1>
 <!-- /wp:heading -->
 
-<!-- wp:spacer {"height":"20px","style":{"layout":{"selfStretch":"fixed","flexSize":"20px"}}} -->
+<!-- wp:group {"className":"wp-block-spacer","layout":{"type":"constrained"}} -->
+<div class="wp-block-group wp-block-spacer"><!-- wp:spacer {"height":"20px"} -->
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
+<!-- /wp:spacer --></div>
+<!-- /wp:group -->
 
 <!-- wp:paragraph -->
 <p>Movaone is a WordPress theme designed to be optimized for display on mobile devices such as smartphones.</p>

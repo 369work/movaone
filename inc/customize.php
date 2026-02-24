@@ -21,7 +21,7 @@ function movaone_customizer($wp_customize)
 	)));
 
 	//header background color 1
-	$header_bg_color_1 = '#313131';
+	$header_bg_color_1 = '#1e2a3a';
 	$wp_customize->add_setting('header_bgcolor_1', array(
 		'default' 	=> $header_bg_color_1,
 		'transport' => 'refresh',
@@ -35,7 +35,7 @@ function movaone_customizer($wp_customize)
 	)));
 
 	//header background color 2
-	$header_bg_color_2 = '#444444';
+	$header_bg_color_2 = '#2d3a50';
 	$wp_customize->add_setting('header_bgcolor_2', array(
 		'default' 	=> $header_bg_color_2,
 		'transport' => 'refresh',

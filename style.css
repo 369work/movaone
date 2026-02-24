@@ -2,8 +2,8 @@
 * Theme Name: Movaone
 * Author: Miroku
 * Author URI: https://profiles.wordpress.org/369work/
-* Description: Movaone is a WordPress theme whose design is optimized to prioritize display on mobile devices such as smartphones.
-* Version: 2.2
+* Description: Movaone is a mobile-first WordPress dark theme with a unique two-column layout: a fixed left panel (aside) and a scrollable right content area. Clean, fast, and easy to customize via the WordPress Customizer.
+* Version: 2.3
 * Requires at least: 6.4
 * Tested up to: 6.9
 * Requires PHP: 8.1
@@ -11,7 +11,7 @@
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
 * Domain Path: /languages
-* Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background
+* Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background, dark, translation-ready, featured-images, threaded-comments, full-width-template
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun.
