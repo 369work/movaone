@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: movaone_1.0\n"
-"POT-Creation-Date: 2025-04-01 12:46+0900\n"
-"PO-Revision-Date: 2025-04-01 12:56+0900\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2026-05-18 01:26+0900\n"
+"PO-Revision-Date: 2026-05-18 01:27+0900\n"
+"Last-Translator: 369work\n"
 "Language-Team: 369work\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -75,23 +75,23 @@ msgstr "Powered by"
 msgid "Theme by "
 msgstr "Theme by "
 
-#: functions.php:51
+#: functions.php:62
 msgid "Sidebar"
 msgstr "サイトバー"
 
-#: functions.php:53
+#: functions.php:64
 msgid "Add widgets here."
 msgstr "ウイジェットを追加"
 
-#: functions.php:70
+#: functions.php:81
 msgid "Primary Menu"
 msgstr "Primary Menu"
 
-#: functions.php:71
+#: functions.php:82
 msgid "Footer Menu"
 msgstr "Footer Menu"
 
-#: functions.php:120
+#: functions.php:131
 msgid "No image"
 msgstr "画像なし"
 
@@ -139,7 +139,7 @@ msgstr "Movaone"
 msgid "Movaone Theme Options"
 msgstr "Movaoneテーマオプション"
 
-#: inc/theme-options.php:88 inc/theme-options.php:138
+#: inc/theme-options.php:88 inc/theme-options.php:139
 msgid "Thank you for using the Movaone theme!"
 msgstr "Movaoneテーマをご利用いただきありがとうございます！"
 
@@ -159,7 +159,7 @@ msgstr ""
 "Movaone テーマを使い始めるにあたって、カスタマイザーを使用してテーマをカスタ"
 "マイズできます。"
 
-#: inc/theme-options.php:95 inc/theme-options.php:125
+#: inc/theme-options.php:95 inc/theme-options.php:126
 msgid "Customize"
 msgstr "カスタマイズ"
 
@@ -169,43 +169,49 @@ msgstr "Movaoneテーマの基本的な使い方"
 
 #: inc/theme-options.php:101
 msgid ""
+"Editing the left content section for PC display is done from the \"Left "
+"Panel Content\" page."
+msgstr ""
+"PC表示の際の左コンテンツ部分の編集は、固定ページの「Left Panel Content」から"
+"行います。"
+
+#: inc/theme-options.php:102
+msgid ""
 "The Customizer allows you to easily customize the look of your site. You can "
 "customize the following elements:"
 msgstr ""
 "カスタマイザーを使用すると、サイトの外観を簡単にカスタマイズできます。次の要"
 "素をカスタマイズできます。"
 
-#: inc/theme-options.php:105
+#: inc/theme-options.php:106
 msgid "Custom logo"
 msgstr "ロゴの設定"
 
-#: inc/theme-options.php:108
+#: inc/theme-options.php:109
 msgid "Custom Header"
 msgstr "ヘッダーのデザイン変更"
 
-#: inc/theme-options.php:111
+#: inc/theme-options.php:112
 msgid "Custom background Color"
 msgstr "背景色の変更"
 
-#: inc/theme-options.php:114
+#: inc/theme-options.php:115
 msgid "Custom background"
 msgstr "背景の変更"
 
-#: inc/theme-options.php:117
+#: inc/theme-options.php:118
 msgid "Menu placement"
 msgstr "メニューの設定"
 
-#: inc/theme-options.php:120
-#, fuzzy
-#| msgid "Sidebar"
+#: inc/theme-options.php:121
 msgid "Sidebar Widget"
-msgstr "サイトバー"
+msgstr "サイドバーのウィジェット"
 
-#: inc/theme-options.php:131
+#: inc/theme-options.php:132
 msgid "Theme Support"
 msgstr "テーマサポート"
 
-#: inc/theme-options.php:132
+#: inc/theme-options.php:133
 msgid ""
 "If you have any questions or need help with the movaone theme, please visit "
 "the support page."
@@ -213,15 +219,15 @@ msgstr ""
 "Movaone テーマに関してご質問やサポートが必要な場合は、サポート ページをご覧く"
 "ださい。"
 
-#: inc/theme-options.php:133
+#: inc/theme-options.php:134
 msgid "Go Details Page"
 msgstr "詳細ページへGO"
 
-#: inc/theme-options.php:137
+#: inc/theme-options.php:138
 msgid "Review the Movaone Theme"
 msgstr "Movaoneテーマのレビュー"
 
-#: inc/theme-options.php:139
+#: inc/theme-options.php:140
 msgid ""
 "We would love to hear your feedback on the Movaone theme. Please take a "
 "moment to leave a review."
@@ -229,7 +235,7 @@ msgstr ""
 "Movaone テーマに関するご意見をお待ちしております。ぜひレビューをお寄せくださ"
 "い。"
 
-#: inc/theme-options.php:141
+#: inc/theme-options.php:142
 msgid "Leave a Review"
 msgstr "レビューをする"
 

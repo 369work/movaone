@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // ヘッダー高さを --header-height にセット
+    const setHeaderHeight = () => {
+        const header = document.querySelector('header');
+        if (header) {
+            document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+        }
+    };
+    setHeaderHeight();
+    window.addEventListener('resize', setHeaderHeight);
     // フォーカス検出のためのイベントリスナー設定
     document.addEventListener("mousedown", () => {
         window.mouseDown = true;

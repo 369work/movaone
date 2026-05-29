@@ -98,6 +98,7 @@ function movaone_theme_description_page()
 
         <div class="content">
             <h3 class="admin-sub-title"><?php esc_html_e('Basic usage of Movaone theme', 'movaone'); ?></h3>
+            <p><?php esc_html_e('Editing the left content section for PC display is done from the "Left Panel Content" page.', 'movaone'); ?></p>
             <p><?php esc_html_e('The Customizer allows you to easily customize the look of your site. You can customize the following elements:', 'movaone'); ?></p>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
 

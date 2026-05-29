@@ -2,16 +2,16 @@
 * Theme Name: Movaone
 * Author: Miroku
 * Author URI: https://profiles.wordpress.org/369work/
-* Description: Movaone is a mobile-first WordPress dark theme with a unique two-column layout: a fixed left panel (aside) and a scrollable right content area. Clean, fast, and easy to customize via the WordPress Customizer.
-* Version: 2.3
-* Requires at least: 6.4
-* Tested up to: 6.9
+* Description: Movaone is a mobile-first WordPress theme with a clean Nordic-inspired design. Features a unique two-column layout with a fixed left panel and a scrollable right content area, fully customizable via the WordPress Customizer.
+* Version: 3.0
+* Requires at least: 6.6
+* Tested up to: 7.0
 * Requires PHP: 8.1
 * License: GNU General Public License v3 or later
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
 * Domain Path: /languages
-* Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background, dark, translation-ready, featured-images, threaded-comments, full-width-template
+* Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background, translation-ready, featured-images, threaded-comments, full-width-template
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun.
@@ -228,8 +228,9 @@ table {
 }
 
 body.custom-background {
-  background-color: rgba(26, 26, 26, 0.7);
-  background-blend-mode: darken;
+background-color: #f8f8f7;
+background-image: none !important;
+    background-blend-mode: normal;
 }
 
 

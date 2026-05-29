@@ -8,7 +8,7 @@ function movaone_customizer($wp_customize)
 	));
 
 	//header text color 1
-	$header_text_color = '#fefef1';
+	$header_text_color = '#1a1a19';
 	$wp_customize->add_setting('header_text_color', array(
 		'default' 	=> $header_text_color,
 		'transport' => 'refresh',
@@ -21,7 +21,7 @@ function movaone_customizer($wp_customize)
 	)));
 
 	//header background color 1
-	$header_bg_color_1 = '#1e2a3a';
+	$header_bg_color_1 = '#f8f8f7';
 	$wp_customize->add_setting('header_bgcolor_1', array(
 		'default' 	=> $header_bg_color_1,
 		'transport' => 'refresh',
@@ -35,7 +35,7 @@ function movaone_customizer($wp_customize)
 	)));
 
 	//header background color 2
-	$header_bg_color_2 = '#2d3a50';
+	$header_bg_color_2 = '#f0f0ef';
 	$wp_customize->add_setting('header_bgcolor_2', array(
 		'default' 	=> $header_bg_color_2,
 		'transport' => 'refresh',
@@ -85,19 +85,14 @@ function movaone_customize_css()
 ?>
 <style type="text/css">
 header {
-    background: linear-gradient(to right, <?php echo esc_html(get_theme_mod('header_bgcolor_1', '#313131')); ?>, <?php echo esc_html(get_theme_mod('header_bgcolor_2', '#444444')); ?>);
+    background: linear-gradient(to right, <?php echo esc_html(get_theme_mod('header_bgcolor_1', '#f8f8f7')); ?>, <?php echo esc_html(get_theme_mod('header_bgcolor_2', '#f0f0ef')); ?>);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .header__logo__title {
-    color: <?php echo esc_html(get_theme_mod('header_text_color', '#fefef1'));
-    ?>;
-}
-
-a.header__link__button {
-    color: <?php echo esc_html(get_theme_mod('header_text_color', '#fefef1'));
+    color: <?php echo esc_html(get_theme_mod('header_text_color', '#1a1a19'));
     ?>;
 }
 </style>

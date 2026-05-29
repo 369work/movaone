@@ -3,15 +3,15 @@
 * Theme URI:
 * Author: Miroku
 * Author URI: https://profiles.wordpress.org/369work/
-* Description: Movaone is a mobile-first WordPress dark theme with a unique two-column layout: a fixed left panel (aside) and a scrollable right content area. Clean, fast, and easy to customize via the WordPress Customizer.
-* Requires at least: 6.4
-* Tested up to: 6.9
+* Description: Movaone is a mobile-first WordPress theme with a clean Nordic-inspired design. Features a unique two-column layout with a fixed left panel and a scrollable right content area, fully customizable via the WordPress Customizer.
+* Requires at least: 6.6
+* Tested up to: 7.0
 * Requires PHP: 8.1
-* Stable tag: 2.3
+* Stable tag: 3.0
 * License: GNU General Public License v3 or later
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
-* Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background, dark, translation-ready, featured-images, threaded-comments, full-width-template
+* Tags: one-column, blog, portfolio, custom-header, custom-menu, custom-logo, custom-colors, custom-background, translation-ready, featured-images, threaded-comments, full-width-template
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun.
@@ -19,8 +19,8 @@ Use it to make something cool, have fun.
 
 == Description ==
 
-Movaone is a mobile-first WordPress dark theme with a distinctive two-column layout:
-a fixed left "aside" panel and a scrollable right content area.
+Movaone is a mobile-first WordPress theme with a clean Nordic-inspired design.
+Features a unique two-column layout: a fixed left panel and a scrollable right content area.
 
 Since the site is designed around the mobile viewport, pages load fast on all devices,
 which helps reduce bounce rates and keeps visitors engaged.
@@ -28,25 +28,23 @@ which helps reduce bounce rates and keeps visitors engaged.
 On desktop (1024px+), the left panel stays fixed while the right panel scrolls — a layout
 that feels native on smartphones and elegant on larger screens.
 
+
+/*========= Copyright =========*/
 Movaone WordPress Theme, Copyright 2025 369work.
 Movaone is distributed under the terms of the GNU GPL.
-Movaone WordPress Theme is derived from Underscores WordPress Theme, Copyright 2013 Automattic, Inc.
-Underscores WordPress Theme is distributed under the terms of the GNU GPL.
+Screenshot: Copyright 369work — CC0 1.0
 
 
-/*========= Font and other Bundle =========*/
-All the theme files, scripts and images are licensed under GPLv3 license.
-Movaone theme uses:
-* Header image, demo image, menu icon, and screenshot : Copyright 369work. Licensed under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
-* back-default.webp, back-default.avif : Copyright 369work. Licensed under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
-* Main Background image (SVG) by https://heropatterns.com/, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+/*========= Bundle =========*/
+All theme files and scripts are licensed under GPLv3.
+This theme does not bundle any third-party images.
+The screenshot uses original artwork by 369work.
 
 
 /*========= Theme Features =========*/
 * Mobile-First layout optimized for smartphones
-* Unique two-column design: fixed aside panel + scrollable content
-* Dark theme with customizable header gradient colors
+* Unique two-column design: fixed left panel + scrollable content
+* Nordic-inspired light design with customizable header colors
 * CTA (Call To Action) button in header — text and link configurable via Customizer
 * Custom Header support
 * Custom Logo support
@@ -68,6 +66,17 @@ Movaone theme uses:
 
 /*== Changelog ==*/
 
+= 3.0 =
+* Complete visual redesign: dark theme replaced with Nordic-inspired light design
+* Removed all bundled images
+* Header background and text color now fully configurable via Customizer
+* Aside panel background fixed (no longer scrolls with content)
+* Footer alignment fixed
+* Admin bar offset support added
+* Header height auto-detected via JavaScript
+* Left panel page renamed to "Left Panel Content"
+* Requires at least: 6.6 / Tested up to: 7.0
+
 = 2.3 =
 * Updated screenshot to reflect the current theme design
 * Improved readme and description
@@ -84,7 +93,7 @@ Movaone theme uses:
 
 /*== Installation ==*/
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+2. Search for "Movaone" and click Install.
 3. Click Activate to use your new theme right away.
 
 

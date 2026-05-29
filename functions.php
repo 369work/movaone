@@ -111,12 +111,12 @@ function movaone_general_register()
 
 	//custom background
 	add_theme_support('custom-background', array(
-		'default-color'          => '#1a1a1a',
-		'default-image'          =>  THEME_IMAGES .'back-default.avif',
-		'default-repeat'         => 'none',
+		'default-color'          => 'f8f8f7',
+		'default-image'          => '',
+		'default-repeat'         => 'no-repeat',
 		'default-position-x'     => 'center',
-		'default-attachment'     => 'fixed',
-		'default-size'           => 'cover',
+		'default-attachment'     => 'scroll',
+		'default-size'           => 'auto',
 	));
 
 	//custom header image
@@ -234,7 +234,7 @@ HTML;
 
 // Create post object
 $aside_page = array(
-'post_title' => 'Top page left content (please do not delete)',
+'post_title' => 'Left Panel Content',
 'post_name' => 'aside',
 'post_content' => $page_content,
 'post_status' => 'publish',
