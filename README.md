@@ -1,6 +1,6 @@
 # Movaone WordPress Theme
 
-**Version 3.0** | Author: [Miroku](https://profiles.wordpress.org/369work/) | License: GPL v3
+**Version 3.2** | Author: [Miroku](https://profiles.wordpress.org/369work/) | License: GPL v3
 
 ---
 
