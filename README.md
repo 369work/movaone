@@ -16,7 +16,7 @@ On desktop (1024px+), the left panel stays fixed while the right panel scrolls â
 a layout that feels native on smartphones and elegant on larger screens.
 
 - Requires at least: WordPress 6.6
-- Tested up to: WordPress 7.0
+- Tested up to: WordPress 7.1
 - Requires PHP: 8.1
 
 ---
