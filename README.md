@@ -63,6 +63,10 @@ Set the button text and link in **Appearance > Customize > Movaone Features**.
 
 ## Changelog
 
+### 3.2
+- WPCS formated
+- Tested up to: 7.1
+
 ### 3.0
 - Complete visual redesign: dark theme replaced with Nordic-inspired light design
 - Removed all bundled images
