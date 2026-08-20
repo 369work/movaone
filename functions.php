@@ -1,208 +1,226 @@
 <?php
 /**
  * Movaone functions and definitions
+ *
  * @package Movaone
-*/
+ */
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
+
+
+// define the Image path.
+if ( ! defined( 'THEME_IMAGES' ) ) {
+	// imagePath.
+	define( 'THEME_IMAGES', get_template_directory_uri() . '/assets/images/' );
+}
+
+// define Movaone version.
+if ( ! defined( 'THEME_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	$version = wp_get_theme()->get( 'Version' );
+	define( 'THEME_VERSION', $version );
+}
 
 /**
- * Proper ob_end_flush() for all levels
- *
- * This replaces the WordPress `wp_ob_end_flush_all()` function
- * with a replacement that doesn't cause PHP notices.
+ * Load theme textdomain for translations.
  */
-remove_action('shutdown', 'wp_ob_end_flush_all', 1);
-add_action('shutdown', function () {
-	while (@ob_end_flush());
-});
-
-//define the Image path
-if (! defined('THEME_IMAGES')) {
-	// imagePath
-	define('THEME_IMAGES', get_template_directory_uri() . '/assets/images/');
+function movaone_language_setup() {
+	load_theme_textdomain( 'movaone', get_template_directory() . '/languages' );
 }
-
-//define Movaone version
-if (! defined('THEME_VERSION')) {
-	// Replace the version number of the theme on each release.
-	$version = wp_get_theme()->get('Version');
-	define('THEME_VERSION', $version);
-}
-
-function movaone_language_setup()
-{
-	load_theme_textdomain('movaone', get_template_directory() . '/languages');
-}
-add_action('after_setup_theme', 'movaone_language_setup');
+add_action( 'after_setup_theme', 'movaone_language_setup' );
 
 
-//add css and js
-function movaone_add_script()
-{
-	wp_enqueue_style('movaone-style', get_stylesheet_uri(), array(), THEME_VERSION);
-	wp_enqueue_style('movaone-original', get_template_directory_uri() . '/assets/css/movaone.css', array(), THEME_VERSION);
+/**
+ * Add css and js.
+ */
+function movaone_add_script() {
+	wp_enqueue_style( 'movaone-style', get_stylesheet_uri(), array(), THEME_VERSION );
+	wp_enqueue_style( 'movaone-original', get_template_directory_uri() . '/assets/css/movaone.css', array(), THEME_VERSION );
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script('movaone-script', get_template_directory_uri() . '/assets/js/movaone.js', array('jquery'), THEME_VERSION, true);
-
+	wp_enqueue_script( 'movaone-script', get_template_directory_uri() . '/assets/js/movaone.js', array( 'jquery' ), THEME_VERSION, true );
 }
-add_action('wp_enqueue_scripts', 'movaone_add_script');
+add_action( 'wp_enqueue_scripts', 'movaone_add_script' );
 
 
 /**
  * Register widget area.
  */
-function movaone_widgets_init()
-{
-	register_sidebar(array(
-		'name'          => esc_html__('Sidebar', 'movaone'),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__('Add widgets here.', 'movaone'),
-		'before_widget' => '<div class="widget-item">',
-		'after_widget' 	=> '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	));
+function movaone_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'movaone' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'movaone' ),
+			'before_widget' => '<div class="widget-item">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	//Registration of Related Post Widget
-	register_widget('movaone_recent_posts');
+	// Registration of Related Post Widget.
+	register_widget( 'movaone_recent_posts' );
 }
-add_action('widgets_init', 'movaone_widgets_init');
+add_action( 'widgets_init', 'movaone_widgets_init' );
 
 
-function movaone_general_register()
-{
-	// Navigation Menus
-	register_nav_menus(array(
-		'primary' => esc_html__('Primary Menu', 'movaone'),
-		'footer' => esc_html__('Footer Menu', 'movaone'),
+/**
+ * Register general theme supports and navigation menus.
+ */
+function movaone_general_register() {
+	// Navigation Menus.
+	register_nav_menus(
+		array(
+			'primary' => esc_html__( 'Primary Menu', 'movaone' ),
+			'footer'  => esc_html__( 'Footer Menu', 'movaone' ),
 
-	));
+		)
+	);
 
-	// Add Feature image support & automatic feed
-	add_theme_support('post-thumbnails');
+	// Add Feature image support & automatic feed.
+	add_theme_support( 'post-thumbnails' );
 
-	//add support for title tag
-	add_theme_support('title-tag');
+	// add support for title tag.
+	add_theme_support( 'title-tag' );
 
 	// Add support for full and wide align images.
-	add_theme_support('align-wide');
-	add_theme_support('appearance-tools');
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'appearance-tools' );
 
-
-	add_theme_support('automatic-feed-links');
+	add_theme_support( 'automatic-feed-links' );
 
 	// Add support for responsive embeds.
-	add_theme_support('responsive-embeds');
+	add_theme_support( 'responsive-embeds' );
 
-	// add support for block styles
-	add_theme_support('wp-block-styles');
+	// add support for block styles.
+	add_theme_support( 'wp-block-styles' );
 
-	//custom logo
-	add_theme_support('custom-logo', array(
-		'height'      => 60,
-		'width'       => 60,
-		'flex-height' => true,
-	));
-
-	//custom background
-	add_theme_support('custom-background', array(
-		'default-color'          => 'f8f8f7',
-		'default-image'          => '',
-		'default-repeat'         => 'no-repeat',
-		'default-position-x'     => 'center',
-		'default-attachment'     => 'scroll',
-		'default-size'           => 'auto',
-	));
-
-	//custom header image
-	$args = array(
-		'default-image' =>  '',
-		'default-background-color' => '#1e2a3a',
-		'default-text-color' => '#fefefe',
-		'width'         => '100%',
-		'height'        => 76,
-		'flex-width'         => true,
-		'flex-height'        => true,
-		'description'	=> __('No image', 'movaone'),
+	// custom logo.
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 60,
+			'width'       => 60,
+			'flex-height' => true,
+		)
 	);
-	add_theme_support('custom-header', $args);
 
+	// custom background.
+	add_theme_support(
+		'custom-background',
+		array(
+			'default-color'      => 'f8f8f7',
+			'default-image'      => '',
+			'default-repeat'     => 'no-repeat',
+			'default-position-x' => 'center',
+			'default-attachment' => 'scroll',
+			'default-size'       => 'auto',
+		)
+	);
 
-	//the post formats
-	add_theme_support('post-formats', array('aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'));
+	// custom header image.
+	$args = array(
+		'default-image'            => '',
+		'default-background-color' => '#1e2a3a',
+		'default-text-color'       => '#fefefe',
+		'width'                    => '100%',
+		'height'                   => 76,
+		'flex-width'               => true,
+		'flex-height'              => true,
+		'description'              => __( 'No image', 'movaone' ),
+	);
+	add_theme_support( 'custom-header', $args );
 
-	// The content width
-	if (! isset($content_width))
+	// the post formats.
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+
+	// The content width.
+	if ( ! isset( $content_width ) ) {
 		$GLOBALS['content_width'] = 1400;
+	}
 
-	//html5 and gallery
-	add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
+	// html5 and gallery.
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 
-	// Add support for admin styles
-	add_theme_support('editor-styles');
-	add_editor_style(get_parent_theme_file_uri('assets/css/editor-style.css'));
-
+	// Add support for admin styles.
+	add_theme_support( 'editor-styles' );
+	add_editor_style( get_parent_theme_file_uri( 'assets/css/editor-style.css' ) );
 }
-add_action('after_setup_theme', 'movaone_general_register');
+add_action( 'after_setup_theme', 'movaone_general_register' );
 
-// custom logo display
+/**
+ * Custom logo display.
+ */
 function movaone_logo() {
-	if (has_custom_logo()) {
+	if ( has_custom_logo() ) {
 		the_custom_logo();
 	}
 }
 
 
-// title tag separator
-function movaone_document_title_separator($separator)
-{
+/**
+ * Title tag separator.
+ *
+ * @param string $separator Separator.
+ * @return string
+ */
+function movaone_document_title_separator( $separator ) {
 	$separator = '|';
 	return $separator;
 }
-add_filter('document_title_separator', 'movaone_document_title_separator');
+add_filter( 'document_title_separator', 'movaone_document_title_separator' );
 
-// CTA button link
+/**
+ * CTA button link.
+ *
+ * @return string
+ */
 function movaone_cta_link() {
-	$cta_link = get_theme_mod('cta_button_link', '#main');
-	if (!strstr($cta_link, 'http') || !strstr($cta_link, 'https')) {
-		$cta_link = home_url($cta_link);
+	$cta_link = get_theme_mod( 'cta_button_link', '#main' );
+	if ( ! strstr( $cta_link, 'http' ) || ! strstr( $cta_link, 'https' ) ) {
+		$cta_link = home_url( $cta_link );
 	} else {
-		$cta_link = esc_url($cta_link);
+		$cta_link = esc_url( $cta_link );
 	}
 	return $cta_link;
 }
 
-// custom excerpt length
-function movaone_excerpt($length)
-{
-	if (is_admin()) {
+/**
+ * Custom excerpt length.
+ *
+ * @param int $length Excerpt length.
+ * @return int
+ */
+function movaone_excerpt( $length ) {
+	if ( is_admin() ) {
 		return $length;
 	}
 	return 55;
 }
-add_filter('excerpt_length', 'movaone_excerpt');
+add_filter( 'excerpt_length', 'movaone_excerpt' );
 
-///include necessary files
+// include necessary files.
 require get_template_directory() . '/inc/customize.php';
 require get_template_directory() . '/inc/widget/recent_posts.php';
 require get_template_directory() . '/inc/theme-options.php';
 
-// create a template
+/**
+ * Create a template.
+ */
 function movaone_create_aside_page() {
-	// Check if the page already exists
-	$page = get_page_by_path('aside');
-	if ($page) {
+	// Check if the page already exists.
+	$page = get_page_by_path( 'aside' );
+	if ( $page ) {
 		return;
 	}
 
-		//Page Content
+		// Page Content.
 	$page_content =
-		<<<HTML
+		<<<'HTML'
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading"><span>Smart</span><br><span class="text-cyan">WEB</span><br><span>Design</span></h1>
@@ -232,16 +250,16 @@ function movaone_create_aside_page() {
 <!-- /wp:group -->
 HTML;
 
-// Create post object
-$aside_page = array(
-'post_title' => 'Left Panel Content',
-'post_name' => 'aside',
-'post_content' => $page_content,
-'post_status' => 'publish',
-'post_type' => 'page',
-);
+	// Create post object.
+	$aside_page = array(
+		'post_title'   => 'Left Panel Content',
+		'post_name'    => 'aside',
+		'post_content' => $page_content,
+		'post_status'  => 'publish',
+		'post_type'    => 'page',
+	);
 
-// Insert the post into the database
-wp_insert_post($aside_page);
+	// Insert the post into the database.
+	wp_insert_post( $aside_page );
 }
-add_action('after_setup_theme', 'movaone_create_aside_page');
+add_action( 'after_setup_theme', 'movaone_create_aside_page' );

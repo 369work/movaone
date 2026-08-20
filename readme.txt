@@ -5,9 +5,9 @@
 * Author URI: https://profiles.wordpress.org/369work/
 * Description: Movaone is a mobile-first WordPress theme with a clean Nordic-inspired design. Features a unique two-column layout with a fixed left panel and a scrollable right content area, fully customizable via the WordPress Customizer.
 * Requires at least: 6.6
-* Tested up to: 7.0
+* Tested up to: 7.1
 * Requires PHP: 8.1
-* Stable tag: 3.0
+* Stable tag: 3.2
 * License: GNU General Public License v3 or later
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * Text Domain: movaone
@@ -32,6 +32,10 @@ that feels native on smartphones and elegant on larger screens.
 /*========= Copyright =========*/
 Movaone WordPress Theme, Copyright 2025 369work.
 Movaone is distributed under the terms of the GNU GPL.
+
+Movaone WordPress Theme is derived from Underscores WordPress Theme, Copyright 2013 Automattic, Inc.
+Underscores WordPress Theme is distributed under the terms of the GNU GPL.
+
 Screenshot: Copyright 369work — CC0 1.0
 
 
@@ -65,6 +69,8 @@ The screenshot uses original artwork by 369work.
 
 
 /*== Changelog ==*/
+= 3.1 =
+* Restored Underscores (_s) credit information in the readme.
 
 = 3.0 =
 * Complete visual redesign: dark theme replaced with Nordic-inspired light design
