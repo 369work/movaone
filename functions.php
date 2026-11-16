@@ -209,57 +209,99 @@ require get_template_directory() . '/inc/widget/recent_posts.php';
 require get_template_directory() . '/inc/theme-options.php';
 
 /**
- * Create a template.
+ * Register the Left Panel widget area.
+ *
+ * Until 3.2 the left panel read a page with the slug "aside", and the theme
+ * created that page on every request when it was missing. Writing to the
+ * database from a theme on every page load broke the WordPress.org theme
+ * preview, so the panel is now a regular widget area.
+ *
+ * @since 3.3
  */
-function movaone_create_aside_page() {
-	// Check if the page already exists.
-	$page = get_page_by_path( 'aside' );
-	if ( $page ) {
+function movaone_register_aside_area() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Left Panel', 'movaone' ),
+			'id'            => 'movaone-aside',
+			'description'   => esc_html__( 'Shown in the fixed left panel on desktop and at the top of the page on mobile. When empty, the site title and tagline are shown.', 'movaone' ),
+			'before_widget' => '<div id="%1$s" class="aside__widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="aside__widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'movaone_register_aside_area' );
+
+/**
+ * Offer a sample Left Panel on fresh sites.
+ *
+ * Starter content only appears on a fresh site, in the Customizer preview,
+ * and is saved only when the owner publishes it. Nothing is written to the
+ * database by the theme itself.
+ *
+ * @since 3.3
+ */
+function movaone_starter_content() {
+	$intro = sprintf(
+		'<h1>%1$s<br><span class="text-cyan">%2$s</span><br>%3$s</h1><p>%4$s</p><p>%5$s</p>',
+		esc_html__( 'Smart', 'movaone' ),
+		esc_html__( 'WEB', 'movaone' ),
+		esc_html__( 'Design', 'movaone' ),
+		esc_html__( 'Movaone is a WordPress theme designed to be optimized for display on mobile devices such as smartphones.', 'movaone' ),
+		esc_html__( 'This text is a Text widget in the Left Panel widget area. Replace it from Appearance > Widgets.', 'movaone' )
+	);
+
+	add_theme_support(
+		'starter-content',
+		array(
+			'widgets' => array(
+				'movaone-aside' => array(
+					'movaone_intro' => array(
+						'text',
+						array(
+							'title'  => '',
+							'text'   => $intro,
+							'filter' => true,
+							'visual' => true,
+						),
+					),
+				),
+			),
+		)
+	);
+}
+add_action( 'after_setup_theme', 'movaone_starter_content' );
+
+/**
+ * Output the content of the left panel.
+ *
+ * Shown in this order, so the panel is never empty:
+ * 1. the Left Panel widget area
+ * 2. the page with the slug "aside", for sites set up before 3.3 (read only)
+ * 3. the site title and tagline
+ *
+ * @since 3.3
+ */
+function movaone_aside_content() {
+	if ( is_active_sidebar( 'movaone-aside' ) ) {
+		dynamic_sidebar( 'movaone-aside' );
 		return;
 	}
 
-		// Page Content.
-	$page_content =
-		<<<'HTML'
-<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><span>Smart</span><br><span class="text-cyan">WEB</span><br><span>Design</span></h1>
-<!-- /wp:heading -->
+	$legacy_page = get_page_by_path( 'aside' );
 
-<!-- wp:group {"className":"wp-block-spacer","layout":{"type":"constrained"}} -->
-<div class="wp-block-group wp-block-spacer"><!-- wp:spacer {"height":"20px"} -->
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div>
-<!-- /wp:group -->
+	if ( $legacy_page instanceof WP_Post && 'publish' === $legacy_page->post_status ) {
+		echo wp_kses_post( apply_filters( 'the_content', $legacy_page->post_content ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		return;
+	}
 
-<!-- wp:paragraph -->
-<p>Movaone is a WordPress theme designed to be optimized for display on mobile devices such as smartphones.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Since the site is displayed on a mobile basis on a PC, pages load quickly, which helps reduce the bounce rate.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>The left content of the PC page is this page. Please rewrite it freely. The heading can be beautifully decorated by starting with H1.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>On PC, this area will always be displayed on the left.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-HTML;
-
-	// Create post object.
-	$aside_page = array(
-		'post_title'   => 'Left Panel Content',
-		'post_name'    => 'aside',
-		'post_content' => $page_content,
-		'post_status'  => 'publish',
-		'post_type'    => 'page',
-	);
-
-	// Insert the post into the database.
-	wp_insert_post( $aside_page );
+	$description = get_bloginfo( 'description', 'display' );
+	?>
+	<p class="aside__site-title"><?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?></p>
+	<?php if ( $description ) : ?>
+		<p class="aside__site-description"><?php echo esc_html( $description ); ?></p>
+	<?php endif; ?>
+	<?php
 }
-add_action( 'after_setup_theme', 'movaone_create_aside_page' );
+

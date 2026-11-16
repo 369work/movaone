@@ -89,12 +89,7 @@
 			<aside>
 				<div class="aside__wrap">
 					<div class="aside__title">
-						<?php
-						$page_id = get_page_by_path( 'aside' );
-						if ( $page_id ) {
-							echo wp_kses_post( apply_filters( 'the_content', $page_id->post_content ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						}
-						?>
+						<?php movaone_aside_content(); ?>
 					</div>
 				</div>
 			</aside>

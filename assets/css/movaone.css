@@ -546,7 +546,8 @@ img.open, img.close {
     align-items: center;
 }
 
-aside h1 {
+aside h1,
+.aside__site-title {
     width: 100%;
     color: var(--color-text);
     font-family: Georgia, 'Times New Roman', serif;
@@ -557,7 +558,26 @@ aside h1 {
     line-height: 1.2;
 }
 
-aside h1::after {
+/* Site title shown when the Left Panel is empty. It is a p, so keep it visible over "aside p" below. */
+.aside__site-title {
+    display: block;
+    margin: 0;
+}
+
+.aside__widget {
+    width: 100%;
+}
+
+.aside__widget-title {
+    color: var(--color-text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+aside h1::after,
+.aside__site-title::after {
     content: "";
     display: block;
     width: 32px;
@@ -608,7 +628,8 @@ aside p {
         align-items: flex-start;
     }
 
-    aside h1 {
+    aside h1,
+    .aside__site-title {
         font-family: Georgia, 'Times New Roman', serif;
         font-size: clamp(3rem, 3.6rem + 2vw, 5rem);
         font-weight: 400;
@@ -618,7 +639,12 @@ aside p {
         line-height: 1.15;
     }
 
-    aside h1::after {
+    .aside__widget-title {
+        text-align: left;
+    }
+
+    aside h1::after,
+    .aside__site-title::after {
         margin: 10px 0 0;
         background: var(--color-accent);
     }
@@ -629,6 +655,15 @@ aside p {
         color: var(--color-text-muted);
         font-size: 1rem;
         text-align: left;
+    }
+
+    /* The panel's gap only separates widgets, so space the heading and paragraphs inside one widget. */
+    .aside__widget :is(h1, h2) + p {
+        margin-top: 1.75rem;
+    }
+
+    .aside__widget p + p {
+        margin-top: 0.75rem;
     }
 }
 

@@ -1,301 +1,365 @@
+# Translation of Themes - Movaone in Japanese
+# This file is distributed under the same license as the Themes - Movaone package.
 msgid ""
 msgstr ""
-"Project-Id-Version: movaone_1.0\n"
-"POT-Creation-Date: 2026-05-18 01:26+0900\n"
-"PO-Revision-Date: 2026-05-18 01:27+0900\n"
-"Last-Translator: 369work\n"
-"Language-Team: 369work\n"
-"Language: ja\n"
+"Project-Id-Version: Themes - Movaone\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/movaone\n"
+"POT-Creation-Date: 2026-10-27T21:04:27+09:00\n"
+"PO-Revision-Date: +0000\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;_nx;__nx;esc_html__\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: assets\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.1.0\n"
 
-#: 404.php:17
-msgid "Oops!That page can&rsquo;t be found."
-msgstr "申し訳ございません。ページが見つかりません."
-
-#: 404.php:21
-msgid "Sorry, the page you are looking for could not be found."
-msgstr "申し訳ありませんが、お探しのページは見つかりませんでした."
-
-#: 404.php:22
-msgid "Please check the URL or return to the homepage."
-msgstr "URLを確認するか、ホームページに戻ってください."
-
-#: archive.php:27 front-page.php:25 home.php:24 index.php:24 search.php:29
-#: single.php:88
-msgid "Sorry, nothing found!"
-msgstr "申し訳ありませんが、何も見つかりません."
-
-#: archive.php:32 home.php:35 index.php:36 parts/pagination.php:11
-#: search.php:36
-msgid "&laquo; Previous Page"
-msgstr "&laquo; 前へ"
-
-#: archive.php:33 home.php:36 index.php:37 parts/pagination.php:28
-#: search.php:37
-msgid "Next Page &raquo;"
-msgstr "次へ &raquo;"
-
-#: archive.php:40 front-page.php:31 home.php:30 index.php:31
-msgid "Sorry, nothing to show here, Please check back later"
-msgstr "申し訳ありませんが、何も表示されません。後でもう一度ご確認ください."
-
-#: comments.php:23
-#, php-format
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgstr "%1$s の &ldquo;%2$s&rdquo; に関する提案"
-
-#: comments.php:39 comments.php:54
-msgid "Comment navigation"
-msgstr "コメントナビ"
-
-#: comments.php:40 comments.php:55
-msgid "&larr; Older Comments"
-msgstr "&larr; 過去のコメント"
-
-#: comments.php:42 comments.php:57
-msgid "Newer Comments &rarr;"
-msgstr "新しいコメント &rarr;"
-
-#: comments.php:69
-msgid "Comments for this topic is closed."
-msgstr "このトピックへのコメントは締め切られています."
-
-#: footer.php:38
-msgid "Powered by"
-msgstr "Powered by"
-
-#: footer.php:40
-msgid "Theme by "
-msgstr "Theme by "
-
-#: functions.php:62
-msgid "Sidebar"
-msgstr "サイトバー"
-
-#: functions.php:64
-msgid "Add widgets here."
-msgstr "ウイジェットを追加"
-
-#: functions.php:81
-msgid "Primary Menu"
-msgstr "Primary Menu"
-
-#: functions.php:82
-msgid "Footer Menu"
-msgstr "Footer Menu"
-
-#: functions.php:131
-msgid "No image"
-msgstr "画像なし"
-
-#: header.php:27
-msgid "Skip to content"
-msgstr "コンテンツをスキップ"
-
-#: header.php:44
-msgid "Open main menu"
-msgstr "メインメニューを開く"
-
-#: header.php:76
-msgid "Close main menu"
-msgstr "メインメニューを閉じる"
-
-#: inc/customize.php:6
-msgid "Movaone Features"
-msgstr "Movaone 設定"
-
-#: inc/customize.php:18
-msgid "Header Text color"
-msgstr "ヘッダーの文字色"
-
-#: inc/customize.php:32
-msgid "Header Background color(gradation 2color select)"
-msgstr "ヘッダーの背景色（2色グラデーション）"
-
-#: inc/customize.php:58
-msgid "CTA Button Text"
-msgstr "CTAボタンのテキスト"
-
-#: inc/customize.php:70
-msgid "CTA Button Link"
-msgstr "CTAボタンのリンク先"
-
-#: inc/theme-options.php:17
-msgid "Movaone Theme Description"
-msgstr "Movaone Theme Description"
-
-#: inc/theme-options.php:18
+#. Theme Name of the theme
+#: style.css:2 inc/theme-options.php:20
 msgid "Movaone"
 msgstr "Movaone"
 
-#: inc/theme-options.php:86
-msgid "Movaone Theme Options"
-msgstr "Movaoneテーマオプション"
+#. Theme URI of the theme
+#: style.css:3
+msgid "https://369theme.com/themes/movaone"
+msgstr "https://369theme.com/themes/movaone"
 
-#: inc/theme-options.php:88 inc/theme-options.php:139
-msgid "Thank you for using the Movaone theme!"
-msgstr "Movaoneテーマをご利用いただきありがとうございます！"
+#. Description of the theme
+#: style.css:6
+msgid "Movaone is a mobile-first WordPress theme with a clean Nordic-inspired design. Features a unique two-column layout with a fixed left panel and a scrollable right content area, fully customizable via the WordPress Customizer."
+msgstr "Movaone は、北欧風のすっきりとしたデザインの、モバイルファーストな WordPress テーマです。左に固定したパネルと、スクロールできる右のコンテンツエリアからなる独自の2カラムレイアウトが特長で、WordPress のカスタマイザーから自由にカスタマイズできます。"
+
+#. Author of the theme
+#: style.css:4
+msgid "miroku"
+msgstr "miroku"
+
+#. Author URI of the theme
+#: style.css:5
+msgid "https://profiles.wordpress.org/369work/"
+msgstr "https://profiles.wordpress.org/369work/"
+
+#: 404.php:18
+msgid "Oops!That page can&rsquo;t be found."
+msgstr "ページが見つかりません。"
+
+#: 404.php:22
+msgid "Sorry, the page you are looking for could not be found."
+msgstr "お探しのページは見つかりませんでした。"
+
+#: 404.php:23
+msgid "Please check the URL or return to the homepage."
+msgstr "URL を確認するか、ホームページに戻ってください。"
+
+#: archive.php:30 front-page.php:32 home.php:30 index.php:29 search.php:35
+#: single.php:98
+msgid "Sorry, nothing found!"
+msgstr "何も見つかりません。"
+
+#: archive.php:35 home.php:42 index.php:41 parts/pagination.php:21
+#: search.php:43
+msgid "&laquo; Previous Page"
+msgstr "&laquo; 前へ"
+
+#: archive.php:38 home.php:43 index.php:42 parts/pagination.php:39
+#: search.php:46
+msgid "Next Page &raquo;"
+msgstr "次へ &raquo;"
+
+#: archive.php:45 front-page.php:39 home.php:37 index.php:36
+msgid "Sorry, nothing to show here, Please check back later"
+msgstr "表示するものがありません。後でもう一度ご確認ください。"
+
+#. translators: %s: post title
+#: comments.php:20
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "「%s」への1件のコメント"
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:25
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "「%2$s」への%1$s件のコメント"
+
+#: comments.php:44 comments.php:61
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: comments.php:45 comments.php:62
+msgid "&larr; Older Comments"
+msgstr "&larr; 過去のコメント"
+
+#: comments.php:47 comments.php:64
+msgid "Newer Comments &rarr;"
+msgstr "新しいコメント &rarr;"
+
+#: comments.php:78
+msgid "Comments for this topic is closed."
+msgstr "このトピックへのコメントは締め切られています。"
+
+#: footer.php:45
+msgid "Powered by"
+msgstr "Powered by"
+
+#: footer.php:47
+msgid "Theme by "
+msgstr "Theme by "
+
+#. Template Name of the theme
+#: front-page.php:3
+msgid "Front Page"
+msgstr "フロントページ"
+
+#: functions.php:55
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: functions.php:57
+msgid "Add widgets here."
+msgstr "ここにウィジェットを追加します。"
+
+#: functions.php:78
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: functions.php:79
+msgid "Footer Menu"
+msgstr "フッターメニュー"
+
+#: functions.php:134
+msgid "No image"
+msgstr "画像なし"
+
+#: functions.php:224
+msgid "Left Panel"
+msgstr "左パネル"
+
+#: functions.php:226
+msgid "Shown in the fixed left panel on desktop and at the top of the page on mobile. When empty, the site title and tagline are shown."
+msgstr "PC では左に固定されるパネル、スマートフォンではページの上部に表示されます。空のときは、サイトのタイトルとキャッチフレーズが表示されます。"
+
+#: functions.php:248
+msgid "Smart"
+msgstr "スマートな"
+
+#: functions.php:249
+msgid "WEB"
+msgstr "ウェブ"
+
+#: functions.php:250
+msgid "Design"
+msgstr "デザイン"
+
+#: functions.php:251
+msgid "Movaone is a WordPress theme designed to be optimized for display on mobile devices such as smartphones."
+msgstr "Movaone は、スマートフォンなどのモバイル端末での表示に最適化して設計された WordPress テーマです。"
+
+#: functions.php:252
+msgid "This text is a Text widget in the Left Panel widget area. Replace it from Appearance > Widgets."
+msgstr "この文章は「左パネル」ウィジェットエリアのテキストウィジェットです。「外観 > ウィジェット」から書き換えてください。"
+
+#: header.php:30
+msgid "Skip to content"
+msgstr "コンテンツへスキップ"
+
+#: header.php:47
+msgid "Open main menu"
+msgstr "メインメニューを開く"
+
+#: header.php:82
+msgid "Close main menu"
+msgstr "メインメニューを閉じる"
+
+#: inc/customize.php:17
+msgid "Movaone Features"
+msgstr "Movaone 設定"
+
+#: inc/customize.php:37
+msgid "Header Text color"
+msgstr "ヘッダーの文字色"
+
+#: inc/customize.php:60
+msgid "Header Background color(gradation 2color select)"
+msgstr "ヘッダーの背景色 (2色グラデーション)"
+
+#: inc/customize.php:102
+msgid "CTA Button Text"
+msgstr "CTA ボタンのテキスト"
+
+#: inc/customize.php:120
+msgid "CTA Button Link"
+msgstr "CTA ボタンのリンク先"
+
+#: inc/theme-options.php:19
+msgid "Movaone Theme Description"
+msgstr "Movaone テーマの説明"
 
 #: inc/theme-options.php:89
-msgid "Here you can customize the Movaone theme."
-msgstr "Movaoneテーマをカスタマイズできます。"
+msgid "Movaone Theme Options"
+msgstr "Movaone テーマオプション"
 
-#: inc/theme-options.php:93
+#: inc/theme-options.php:91 inc/theme-options.php:155
+msgid "Thank you for using the Movaone theme!"
+msgstr "Movaone テーマをご利用いただきありがとうございます !"
+
+#: inc/theme-options.php:92
+msgid "Here you can customize the Movaone theme."
+msgstr "Movaone テーマをカスタマイズできます。"
+
+#: inc/theme-options.php:96
 msgid "Getting Started"
 msgstr "はじめましょう"
 
-#: inc/theme-options.php:94
-msgid ""
-"To get started with the Movaone theme, you can customize the theme using the "
-"Customizer."
-msgstr ""
-"Movaone テーマを使い始めるにあたって、カスタマイザーを使用してテーマをカスタ"
-"マイズできます。"
+#: inc/theme-options.php:97
+msgid "To get started with the Movaone theme, you can customize the theme using the Customizer."
+msgstr "Movaone テーマを使い始めるにあたって、カスタマイザーを使用してテーマをカスタマイズできます。"
 
-#: inc/theme-options.php:95 inc/theme-options.php:126
+#: inc/theme-options.php:100 inc/theme-options.php:140
 msgid "Customize"
 msgstr "カスタマイズ"
 
-#: inc/theme-options.php:100
+#: inc/theme-options.php:105
 msgid "Basic usage of Movaone theme"
-msgstr "Movaoneテーマの基本的な使い方"
-
-#: inc/theme-options.php:101
-msgid ""
-"Editing the left content section for PC display is done from the \"Left "
-"Panel Content\" page."
-msgstr ""
-"PC表示の際の左コンテンツ部分の編集は、固定ページの「Left Panel Content」から"
-"行います。"
-
-#: inc/theme-options.php:102
-msgid ""
-"The Customizer allows you to easily customize the look of your site. You can "
-"customize the following elements:"
-msgstr ""
-"カスタマイザーを使用すると、サイトの外観を簡単にカスタマイズできます。次の要"
-"素をカスタマイズできます。"
+msgstr "Movaone テーマの基本的な使い方"
 
 #: inc/theme-options.php:106
+msgid "Editing the left content section for PC display is done from the \"Left Panel Content\" page."
+msgstr "PC 表示の際の左コンテンツ部分の編集は、固定ページの「Left Panel Content」から行います。"
+
+#: inc/theme-options.php:108
+msgid "The Customizer allows you to easily customize the look of your site. You can customize the following elements:"
+msgstr "カスタマイザーを使用すると、サイトの外観を簡単にカスタマイズできます。次の要素をカスタマイズできます:"
+
+#: inc/theme-options.php:114
 msgid "Custom logo"
 msgstr "ロゴの設定"
 
-#: inc/theme-options.php:109
+#: inc/theme-options.php:118
 msgid "Custom Header"
 msgstr "ヘッダーのデザイン変更"
 
-#: inc/theme-options.php:112
+#: inc/theme-options.php:122
 msgid "Custom background Color"
 msgstr "背景色の変更"
 
-#: inc/theme-options.php:115
+#: inc/theme-options.php:126
 msgid "Custom background"
 msgstr "背景の変更"
 
-#: inc/theme-options.php:118
+#: inc/theme-options.php:130
 msgid "Menu placement"
 msgstr "メニューの設定"
 
-#: inc/theme-options.php:121
+#: inc/theme-options.php:134
 msgid "Sidebar Widget"
 msgstr "サイドバーのウィジェット"
 
-#: inc/theme-options.php:132
+#: inc/theme-options.php:146
 msgid "Theme Support"
 msgstr "テーマサポート"
 
-#: inc/theme-options.php:133
-msgid ""
-"If you have any questions or need help with the movaone theme, please visit "
-"the support page."
-msgstr ""
-"Movaone テーマに関してご質問やサポートが必要な場合は、サポート ページをご覧く"
-"ださい。"
+#: inc/theme-options.php:147
+msgid "If you have any questions or need help with the movaone theme, please visit the support page."
+msgstr "Movaone テーマに関してご質問やサポートが必要な場合は、サポートページをご覧ください。"
 
-#: inc/theme-options.php:134
+#: inc/theme-options.php:150
 msgid "Go Details Page"
-msgstr "詳細ページへGO"
+msgstr "詳細ページへ"
 
-#: inc/theme-options.php:138
+#: inc/theme-options.php:154
 msgid "Review the Movaone Theme"
-msgstr "Movaoneテーマのレビュー"
+msgstr "Movaone テーマのレビュー"
 
-#: inc/theme-options.php:140
-msgid ""
-"We would love to hear your feedback on the Movaone theme. Please take a "
-"moment to leave a review."
-msgstr ""
-"Movaone テーマに関するご意見をお待ちしております。ぜひレビューをお寄せくださ"
-"い。"
+#: inc/theme-options.php:156
+msgid "We would love to hear your feedback on the Movaone theme. Please take a moment to leave a review."
+msgstr "Movaone テーマに関するご意見をお待ちしております。ぜひレビューをお寄せください。"
 
-#: inc/theme-options.php:142
+#: inc/theme-options.php:160
 msgid "Leave a Review"
-msgstr "レビューをする"
+msgstr "レビューを投稿"
 
-#: inc/widget/recent_posts.php:9
-msgid ""
-"Display Recent Posts with this widget or you can also use movaone Posts "
-"widget for more filters."
-msgstr ""
-"このウィジェットを使用して最近の投稿を表示するか、または Movaone 投稿ウィ"
-"ジェットを使用することもできます。"
+#: inc/widget/recent_posts.php:20
+msgid "Display Recent Posts with this widget or you can also use movaone Posts widget for more filters."
+msgstr "このウィジェットで最近の投稿を表示できます。もっと細かく絞り込むなら、Movaone 投稿ウィジェットも使えます。"
 
-#: inc/widget/recent_posts.php:10
+#: inc/widget/recent_posts.php:22
 msgid "movaone Recent Posts Widget"
 msgstr "最近の投稿ウィジェット"
 
-#: inc/widget/recent_posts.php:88
+#: inc/widget/recent_posts.php:109
 msgid "Recent Posts"
 msgstr "最近の投稿"
 
-#: inc/widget/recent_posts.php:93
+#: inc/widget/recent_posts.php:119
 msgid "Title"
 msgstr "タイトル"
 
-#: inc/widget/recent_posts.php:100
+#: inc/widget/recent_posts.php:126
 msgid "Limit Posts Number"
 msgstr "投稿数の制限"
 
-#: inc/widget/recent_posts.php:110
+#: inc/widget/recent_posts.php:136
 msgid "Display post date?"
-msgstr "投稿日を表示しますか?"
+msgstr "投稿日を表示しますか ?"
 
-#: parts/author-infobox.php:3
+#. Template Name of the theme
+#: page.php:3
+msgid "Page Default"
+msgstr "固定ページ (標準)"
+
+#: parts/author-infobox.php:11
 msgid "About "
 msgstr "About "
 
-#: parts/content-aside.php:24
+#: parts/content-aside.php:32
 msgid "Continue reading..."
 msgstr "続きを読む..."
 
-#: parts/content-more.php:25
+#: parts/content-more.php:21
 msgid "read more"
-msgstr "もっと読む"
+msgstr "続きを読む"
 
-#: parts/content-page.php:7 single.php:51
+#: parts/content-page.php:18 single.php:57
 msgid "Pages:"
-msgstr "ページ："
+msgstr "ページ:"
 
-#: parts/related-posts.php:32
+#: parts/related-posts.php:42
 msgid "ago"
 msgstr "前"
 
-#: search.php:21
+#. translators: %s: search query.
+#: search.php:24
 #, php-format
 msgid "Search Results for: %s"
-msgstr "%s 件の検索結果"
+msgstr "「%s」の検索結果"
 
-#: single.php:35
+#: searchform.php:12
+msgctxt "label"
+msgid "Search for: "
+msgstr "検索: "
+
+#: searchform.php:13
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "検索&hellip;"
+
+#: searchform.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr "検索"
+
+#. Template Name of the theme
+#: single.php:3
+msgid "Single Post"
+msgstr "投稿"
+
+#: single.php:39
 msgid "By"
 msgstr "By"
 
-#: single.php:41
+#: single.php:45
 msgid " &#8212; Posted in"
-msgstr " &#8212; カテゴリ"
+msgstr " &#8212; カテゴリー"

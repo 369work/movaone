@@ -1,0 +1,387 @@
+# Copyright (C) 2026 miroku
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Movaone 3.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/movaone\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-27T22:19:16+09:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: movaone\n"
+
+#. Theme Name of the theme
+#: style.css:2
+#: inc/theme-options.php:20
+msgid "Movaone"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css:3
+msgid "https://369theme.com/themes/movaone"
+msgstr ""
+
+#. Description of the theme
+#: style.css:6
+msgid "Movaone is a mobile-first WordPress theme with a clean Nordic-inspired design. Features a unique two-column layout with a fixed left panel and a scrollable right content area, fully customizable via the WordPress Customizer."
+msgstr ""
+
+#. Author of the theme
+#: style.css:4
+msgid "miroku"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css:5
+msgid "https://profiles.wordpress.org/369work/"
+msgstr ""
+
+#: 404.php:18
+msgid "Oops!That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:22
+msgid "Sorry, the page you are looking for could not be found."
+msgstr ""
+
+#: 404.php:23
+msgid "Please check the URL or return to the homepage."
+msgstr ""
+
+#: archive.php:30
+#: front-page.php:32
+#: home.php:30
+#: index.php:29
+#: search.php:35
+#: single.php:98
+msgid "Sorry, nothing found!"
+msgstr ""
+
+#: archive.php:35
+#: home.php:42
+#: index.php:41
+#: parts/pagination.php:21
+#: search.php:43
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: archive.php:38
+#: home.php:43
+#: index.php:42
+#: parts/pagination.php:39
+#: search.php:46
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: archive.php:45
+#: front-page.php:39
+#: home.php:37
+#: index.php:36
+msgid "Sorry, nothing to show here, Please check back later"
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:20
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:25
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:44
+#: comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:45
+#: comments.php:62
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:47
+#: comments.php:64
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:78
+msgid "Comments for this topic is closed."
+msgstr ""
+
+#: footer.php:45
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:47
+msgid "Theme by "
+msgstr ""
+
+#. Template Name of the theme
+#: front-page.php:3
+msgid "Front Page"
+msgstr ""
+
+#: functions.php:55
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:57
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:78
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:79
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:134
+msgid "No image"
+msgstr ""
+
+#: functions.php:224
+msgid "Left Panel"
+msgstr ""
+
+#: functions.php:226
+msgid "Shown in the fixed left panel on desktop and at the top of the page on mobile. When empty, the site title and tagline are shown."
+msgstr ""
+
+#: functions.php:248
+msgid "Smart"
+msgstr ""
+
+#: functions.php:249
+msgid "WEB"
+msgstr ""
+
+#: functions.php:250
+msgid "Design"
+msgstr ""
+
+#: functions.php:251
+msgid "Movaone is a WordPress theme designed to be optimized for display on mobile devices such as smartphones."
+msgstr ""
+
+#: functions.php:252
+msgid "This text is a Text widget in the Left Panel widget area. Replace it from Appearance > Widgets."
+msgstr ""
+
+#: header.php:30
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:47
+msgid "Open main menu"
+msgstr ""
+
+#: header.php:82
+msgid "Close main menu"
+msgstr ""
+
+#: inc/customize.php:17
+msgid "Movaone Features"
+msgstr ""
+
+#: inc/customize.php:37
+msgid "Header Text color"
+msgstr ""
+
+#: inc/customize.php:60
+msgid "Header Background color(gradation 2color select)"
+msgstr ""
+
+#: inc/customize.php:102
+msgid "CTA Button Text"
+msgstr ""
+
+#: inc/customize.php:120
+msgid "CTA Button Link"
+msgstr ""
+
+#: inc/theme-options.php:19
+msgid "Movaone Theme Description"
+msgstr ""
+
+#: inc/theme-options.php:89
+msgid "Movaone Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:91
+#: inc/theme-options.php:155
+msgid "Thank you for using the Movaone theme!"
+msgstr ""
+
+#: inc/theme-options.php:92
+msgid "Here you can customize the Movaone theme."
+msgstr ""
+
+#: inc/theme-options.php:96
+msgid "Getting Started"
+msgstr ""
+
+#: inc/theme-options.php:97
+msgid "To get started with the Movaone theme, you can customize the theme using the Customizer."
+msgstr ""
+
+#: inc/theme-options.php:100
+#: inc/theme-options.php:140
+msgid "Customize"
+msgstr ""
+
+#: inc/theme-options.php:105
+msgid "Basic usage of Movaone theme"
+msgstr ""
+
+#: inc/theme-options.php:106
+msgid "Editing the left content section for PC display is done from the \"Left Panel Content\" page."
+msgstr ""
+
+#: inc/theme-options.php:108
+msgid "The Customizer allows you to easily customize the look of your site. You can customize the following elements:"
+msgstr ""
+
+#: inc/theme-options.php:114
+msgid "Custom logo"
+msgstr ""
+
+#: inc/theme-options.php:118
+msgid "Custom Header"
+msgstr ""
+
+#: inc/theme-options.php:122
+msgid "Custom background Color"
+msgstr ""
+
+#: inc/theme-options.php:126
+msgid "Custom background"
+msgstr ""
+
+#: inc/theme-options.php:130
+msgid "Menu placement"
+msgstr ""
+
+#: inc/theme-options.php:134
+msgid "Sidebar Widget"
+msgstr ""
+
+#: inc/theme-options.php:146
+msgid "Theme Support"
+msgstr ""
+
+#: inc/theme-options.php:147
+msgid "If you have any questions or need help with the movaone theme, please visit the support page."
+msgstr ""
+
+#: inc/theme-options.php:150
+msgid "Go Details Page"
+msgstr ""
+
+#: inc/theme-options.php:154
+msgid "Review the Movaone Theme"
+msgstr ""
+
+#: inc/theme-options.php:156
+msgid "We would love to hear your feedback on the Movaone theme. Please take a moment to leave a review."
+msgstr ""
+
+#: inc/theme-options.php:160
+msgid "Leave a Review"
+msgstr ""
+
+#: inc/widget/recent_posts.php:20
+msgid "Display Recent Posts with this widget or you can also use movaone Posts widget for more filters."
+msgstr ""
+
+#: inc/widget/recent_posts.php:22
+msgid "movaone Recent Posts Widget"
+msgstr ""
+
+#: inc/widget/recent_posts.php:109
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widget/recent_posts.php:119
+msgid "Title"
+msgstr ""
+
+#: inc/widget/recent_posts.php:126
+msgid "Limit Posts Number"
+msgstr ""
+
+#: inc/widget/recent_posts.php:136
+msgid "Display post date?"
+msgstr ""
+
+#. Template Name of the theme
+#: page.php:3
+msgid "Page Default"
+msgstr ""
+
+#: parts/author-infobox.php:11
+msgid "About "
+msgstr ""
+
+#: parts/content-aside.php:32
+msgid "Continue reading..."
+msgstr ""
+
+#: parts/content-more.php:21
+msgid "read more"
+msgstr ""
+
+#: parts/content-page.php:18
+#: single.php:57
+msgid "Pages:"
+msgstr ""
+
+#: parts/related-posts.php:42
+msgid "ago"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:24
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "label"
+msgid "Search for: "
+msgstr ""
+
+#: searchform.php:13
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#. Template Name of the theme
+#: single.php:3
+msgid "Single Post"
+msgstr ""
+
+#: single.php:39
+msgid "By"
+msgstr ""
+
+#: single.php:45
+msgid " &#8212; Posted in"
+msgstr ""
